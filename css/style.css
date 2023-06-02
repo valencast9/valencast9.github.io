@@ -32,16 +32,16 @@ header a {
     color: #ffffff;
 }
 
+a:hover {
+    color: #e44c65;
+    border-bottom-color: transparent;
+}
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: inherit;
     border: 0;
     font-size: 1.2rem;
 
-}
-
-a:hover {
-    color: #e44c65;
-    border-bottom-color: transparent;
 }
 
 #header {

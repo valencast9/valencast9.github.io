@@ -473,7 +473,7 @@ div.obras article {
 
 article div.main-article{
     width: 100%;
-    border-top: 3px dashed #001233;;
+    border-top: 3px dashed #001233;
     display: flex;
     justify-content: center;
     align-items: center;

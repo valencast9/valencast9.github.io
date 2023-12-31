@@ -63,3 +63,7 @@ footer p{
     font-size: 11px;
     text-align: center;
 }
+
+@media(max-width:500px){
+    nav{width: auto;}
+}

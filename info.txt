@@ -1,2 +1,0 @@
-slider HTML, CSS and JS-> https://imageslidermaker.com/v2
-Icons -> https://fontawesome.com/

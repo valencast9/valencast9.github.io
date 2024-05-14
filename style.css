@@ -1,39 +1,60 @@
+/* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
 }
 
+/* Header Styles */
 header {
-    background-color: #333;
-    padding: 15px;
+    background-color: #373737;
+    padding: 20px 0;
     text-align: center;
+    color: #fff;
+    border-bottom: 1px solid #a6a6a6;
 }
 
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+}
+
+header a:hover {
+    color: #ffe600;
+}
+
+/* Navigation Styles */
 nav {
     display: flex;
     justify-content: center;
     background-color: #555;
-    padding: 10px;
+    padding: 15px 0;
+    box-shadow: 0 0 15px #373737;
 }
-
 
 nav a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     margin: 0 10px;
     background-color: #555;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s ease-in-out;
 }
 
 nav a:hover {
-    background-color: #777;
-    color: #fff;
+    background-color: #777777;
 }
 
-
+/* Section/divs */
 section {
     max-width: 800px;
     margin: 20px auto;
@@ -43,6 +64,10 @@ section {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+#diplomas {
+    margin-bottom: 30px;
+}
+
 @media(max-width:870px) {
     section {margin: 20px 10%}
 }
@@ -50,12 +75,6 @@ section {
 h1 a{
     text-decoration: none;
     color: #3fa6e1
-}
-
-nav a:hover {
-    background-color: #777; 
-    color: #fff; 
-    transition: background-color 0.3s, color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 ul {
@@ -68,7 +87,19 @@ footer p{
     text-align: center;
 }
 
-@media(max-width:500px){
-    nav a {padding: 5px 10px;
-           margin: 0 5px;}
+h2 {
+    font-size: 36px;
+    margin: 2px;
+    font-weight: 400;
+}
+
+@media(max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
 }

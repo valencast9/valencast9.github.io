@@ -1,44 +1,109 @@
-<!--
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="style.css">
-    <title>projects</title>
-
+    <link rel="stylesheet" href="style.css">
+    <script src="navigation.js" defer></script>
+    <title>Projects | Valentino Cattaneo</title>
 </head>
 <body>
 
-    <header>
-        <h1><a href="index.html">Valentino Cattaneo</a></h1>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1><a href="index.html">Valentino Cattaneo</a></h1>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a target="_blank" href="most updated resume.pdf">Resume</a>
+                <div class="nav-dropdown">
+                    <a class="nav-dropdown-toggle" href="projects.html" aria-current="page" aria-haspopup="true">Projects <span aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="#vfs-purdue">VFS Purdue</a>
+                        <a class="nav-subitem" href="#vfs-250kg-vehicle">250kg Vehicle</a>
+                        <a class="nav-subitem" href="#vfs-scale-prototype">40% Scale Prototype</a>
+                        <a href="#lidar-drone">L.I.D.A.R. Drone</a>
+                        <a href="#modular-control-esc">Modular Control ESC</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+                <a href="links.html">Links</a>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a target="_blank" href="most updated resume.pdf">Resume</a>
-        <a href="bio.html">Bio</a>
-        <a href="contact.html">Contact</a>
-        <a href="links.html">Links</a>
-        <a href="projects.html"><u>Projects</u></a>
-    </nav>
-
     <section>
-        <h2>Webpage in progress.</h2>
-          <ul>
-              <p>Valentino Cattaneo (2023). "Parachutes in the Future" (<a target="_blank" 
-                href="https://docs.google.com/document/d/1kAuD00EzqhLrfgN--uZYHN4A4ja8lqI275wCJknfN5k/edit?usp=sharing">docs</a>)</p>
-         </ul>
-         <u1>
-            <p><b>L.I.D.A.R.</b>: Light-based Indoor Drone for Autonomous Recognition</p>
-         </u1>
-        <p><a target="_blank" href="most updated resume.pdf">Resume</a></p>
-        <p><a target="_blank" href="https://mattwklee.github.io/">Power Electronics and Drives Research Lab</a></p>   
+        <h2>Projects</h2>
+        <p class="projects-intro">A selection of aircraft, autonomy, and motor-control projects I have led or built.</p>
+
+        <article class="project-card project-card--featured" id="vfs-purdue">
+            <p class="section-status">Section in progress</p>
+            <h3>VFS Purdue</h3>
+            <p>
+                As President of <a href="https://vfs-go-aero.github.io/" target="_blank">Vertical Flight Systems Purdue</a>,
+                I lead a 30-member interdisciplinary team developing an autonomy-enabled, human-carrying eVTOL for the
+                GoAERO Competition. Our team earned the U.S. University Innovation Award and raised more than $74,000
+                toward the aircraft's development.
+            </p>
+
+            <div class="project-subprojects">
+                <section class="project-subcard" id="vfs-250kg-vehicle">
+                    <p class="section-status">Section in progress</p>
+                    <h4>250kg Vehicle</h4>
+                    <p>
+                        Our full-scale aircraft is a human-carrying emergency-response eVTOL designed for the final stage of
+                        the GoAERO Competition. I coordinate aircraft-level technical and logistical decisions while focusing
+                        on the 100 V monitoring and balancing BMS for its 14.4 kWh battery pack.
+                    </p>
+                </section>
+
+                <section class="project-subcard" id="vfs-scale-prototype">
+                    <p class="section-status">Section in progress</p>
+                    <h4>40% Scale Prototype</h4>
+                    <p>
+                        This 32 kg demonstrator validated the team's propulsion, avionics, and autonomy architecture before
+                        committing to the full-scale aircraft. I led avionics and propulsion integration and helped direct the
+                        flight-test campaign from initial takeoff through fully autonomous missions.
+                    </p>
+                </section>
+            </div>
+        </article>
+
+        <article class="project-card" id="lidar-drone">
+            <p class="section-status">Section in progress</p>
+            <h3>L.I.D.A.R. Drone</h3>
+            <p>
+                L.I.D.A.R. (Light-based Indoor Drone for Autonomous Recognition) is a custom 3D-printed, five-inch
+                multirotor I designed and manufactured for autonomous indoor flight. It uses a Raspberry Pi and a custom
+                LiDAR-based SLAM algorithm written in C++ to map its surroundings, estimate its position, and navigate
+                indoors without collisions.
+            </p>
+        </article>
+
+        <article class="project-card" id="modular-control-esc">
+            <p class="section-status">Project in progress</p>
+            <h3>Modular Control ESC</h3>
+            <p>
+                This project is a modular motor-driver platform for deploying and comparing motor-control algorithms and
+                rotor-position estimators on the same hardware. The planned design uses an STM32H743, a three-phase inverter,
+                gate drivers, current sensing, and DC-link measurement so algorithms such as FOC, deadbeat control, MPC, and
+                DTC can be evaluated under comparable conditions. I'm currently designing the hardware to enable multiple 
+                control algorithms to be tested on the same inverter and motor, with the goal of providing a flexible platform for research and development in motor control.
+            </p>
+            <ul>
+                <li><b>Position feedback:</b> support for encoders, Hall sensors, and sensorless observers.</li>
+                <li><b>Power target:</b> 1 kW</li>
+            </ul>
+        </article>
     </section>
+
     <footer>
         <p>&copy; 2025 Valentino Cattaneo. All rights reserved.</p>
+        <a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" id="linkedin-link">
+            <img src="src/img/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930480.png" alt="LinkedIn Profile" id="linkedin-logo">
+        </a>
     </footer>
-    </body>
-    
-    -->
+</body>
+</html>

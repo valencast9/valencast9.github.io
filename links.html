@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="style.css">
+    <script src="navigation.js" defer></script>
     <title>Links</title>
 
 </head>
 <body>
 
-    <header>
-        <h1><a href="index.html">Valentino Cattaneo</a></h1>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1><a href="index.html">Valentino Cattaneo</a></h1>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a target="_blank" href="most updated resume.pdf">Resume</a>
+                <div class="nav-dropdown">
+                    <a class="nav-dropdown-toggle" href="projects.html" aria-haspopup="true">Projects <span aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="projects.html#vfs-purdue">VFS Purdue</a>
+                        <a class="nav-subitem" href="projects.html#vfs-250kg-vehicle">250kg Vehicle</a>
+                        <a class="nav-subitem" href="projects.html#vfs-scale-prototype">40% Scale Prototype</a>
+                        <a href="projects.html#lidar-drone">L.I.D.A.R. Drone</a>
+                        <a href="projects.html#modular-control-esc">Modular Control ESC</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+                <a href="links.html" aria-current="page">Links</a>
+            </nav>
+        </div>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a target="_blank" href="most updated resume.pdf">Resume</a>
-        <a href="bio.html">Bio</a>
-        <a href="contact.html">Contact</a>
-        <a href="links.html"><u>Links</u></a>
-    </nav>
 
     <section>
         <p><a target="_blank" href="https://mattwklee.github.io/">Power Electronics and Drives Research Lab</a></p>

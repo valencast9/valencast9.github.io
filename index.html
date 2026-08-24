@@ -4,33 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="navigation.js" defer></script>
     <title>Index</title>
 </head>
 <body>
 
-    <header>
-        <h1><a href="index.html">Valentino Cattaneo</a></h1>
+    <header class="site-header">
+        <div class="header-inner">
+            <h1><a href="index.html">Valentino Cattaneo</a></h1>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a target="_blank" href="most updated resume.pdf">Resume</a>
+                <div class="nav-dropdown">
+                    <a class="nav-dropdown-toggle" href="projects.html" aria-haspopup="true">Projects <span aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu">
+                        <a href="projects.html#vfs-purdue">VFS Purdue</a>
+                        <a class="nav-subitem" href="projects.html#vfs-250kg-vehicle">250kg Vehicle</a>
+                        <a class="nav-subitem" href="projects.html#vfs-scale-prototype">40% Scale Prototype</a>
+                        <a href="projects.html#lidar-drone">L.I.D.A.R. Drone</a>
+                        <a href="projects.html#modular-control-esc">Modular Control ESC</a>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
+                <a href="links.html">Links</a>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <a href="index.html"><u>Home</u></a>
-        <a target="_blank" href="most updated resume.pdf">Resume</a>
-        <a href="bio.html">Bio</a>
-        <a href="contact.html">Contact</a>
-        <a href="links.html">Links</a>
-    </nav>
-
     <section>
-        <h2>Hello,</h2>
+        <h2>Hello! Welcome To My Portfolio</h2>
         <p>
-            Welcome to my website! I am Valentino Cattaneo, a sophomore pursuing a 
-            <b>Bachelor of Science in Electrical Engineering</b> at <b>Purdue University</b> with 3.98 GPA, 
-            expected to graduate in December 2027. 
+            I am Valentino Cattaneo, a student pursuing a Bachelor of Science in 
+            <b>Electrical Engineering at Purdue University</b> with 3.94 GPA, 
+            concentrating in Power and Energy Systems and graduating in May 2028.
+            Here lies a collection of personal, academic, and professional projects 
+            I have worked on and a small reflection of what each of these taught me. 
+            I am always looking for new opportunities to learn and grow, so please feel 
+            free to reach out if you have any questions or would like to collaborate 
+            on a project!
+        </p>
+        <figure class="feature-photo">
+            <img src="me_carrying_the_drone_flight_test_day.jpg" alt="Valentino carrying the VFS prototype drone on flight test day">
+            <figcaption>Shake testing VFS's prototype drone on flight test day</figcaption>
+        </figure>
+        <h3>About Me</h3>
+        <p>
+            I am an aspiring engineer with a deep interest and passion for creating electric propulsion, 
+            embedded hardware and autonomous systems that can make a positive impact on the world. I've participated
+            in several projects where I've developed my skills in designing, building and testing these:
+            I've served as Vice President and am the current <b>President</b> of the 
+            <a href="https://vfs-go-aero.github.io/" target="_blank"><b>Vertical Flight 
+            Systems (VFS) Purdue</b></a> organization, where I lead a team of 30 students in designing 
+            and building a human-carrying emergency response drone for the GoAERO Competition.
+            While building our 40% scaled-down prototype, I worked at the 
+            <a href="https://mattwklee.github.io/" target="_blank"><b>Purdue POWER Lab</b></a>
+             as an <b>Undergraduate Researcher</b>, where I focused on
+            designing, modifying and testing multi-phase motor drives for UAV applications. 
+            Finally, since May 2026, I've been working as an <b>Electrical Engineering Intern</b> at
+            <a href="https://angelaerialsystems.com/" target="_blank"><b>Angel Aerial Systems</b></a>,
+            where I focus my time developing our battery pack, from the bare-cells to pack assembly
+            process
+            to the design and firmware integration of the battery management system. 
         </p>
         <p>
+            Since May 2026, I have been working as an <b>Electrical Engineering Intern</b> 
+            at <b>Angel Aerial Systems</b>, where I am responsible for much of the battery 
+            system development for the Trio Scout, a 100-minute flight, easily deployable
+             tricopter. My work spans the complete battery system, from pouch-cell assembly 
+             and interconnect design to BMS hardware and embedded firmware.
+
+I <b>redesigned the aircraft's Battery Management System (BMS)</b> to improve reliability,
+ serviceability, and diagnostic capability
+   I have also worked extensively on debugging
+   existing hardware and software, including leading the BMS-side root cause analysis 
+   investigation of a pack issue.<p>
+On the pack side, I helped transition the pouch-cell assembly to resistance-welded 
+interconnects, designing the associated electrical and mechanical interfaces in Siemens 
+NX. For this task I worked alongside the mechanical team where we went over what felt like
+ 100 iterations of BMS board shapes, tab bending shapes and techniques, and overall 
+ positioning of everything in our hyper-optimized pack.<p>
+ This work has given me experience 
+ developing a safety-critical electrical system across the entire engineering cycle:
+  from analyzing field issues and defining requirements to designing hardware, writing 
+  firmware, figuring out manufacturing and assembly, and validating the finished system.
+        </p>
+                <figure class="feature-photo">
+            <img src="angel_aerial_team_picture_with_drones.png" alt="The Angel Aerial Systems team with their drones">
+            <figcaption>The Angel Aerial Systems team with our drones</figcaption>
+        </figure>
+        <p>
             At Purdue, I serve as the <b>President of VFS Purdue</b> for the International GoAERO VTOL 
-            Competition, where I lead a team of ~25 Engineering students. Together, we design and build an autonomous 
-            emergency rescue aircraft. Our team recently earned the 
+            Competition, where I lead a team of 30 Engineering students in designing and building an autonomous 
+            250kg drone. Our team recently earned the 
             <a href="https://www.goaeroprize.com/stage-1-winning-teams/go-aero-purdue" 
             target="_blank"><b>U.S. University Innovation Award by NASA</b></a> in Stage 1 of the Competition.
             As part of Stage 2, we designed, constructed, and autonomously flown a 40% scaled-down prototype. 
@@ -41,6 +109,10 @@
              procuring, building, and flying, while also focusing my technical work in designing the 100V monitoring and balancing Battery Management System
              for our 14.4 kWh battery pack.
         </p>
+        <figure class="feature-photo">
+            <img src="vfs_prototype_drone_flying.jpg" alt="The VFS prototype drone flying during a test flight">
+            <figcaption>Our VFS prototype drone during a test flight</figcaption>
+        </figure>
         <!-- Team Photo -->
 <div class="photo-gallery">
     <div class="photo-item">
@@ -76,14 +148,9 @@
     </div>
 </div>
         <p>
-            Before coming to Purdue, I was <b>Head Boy at Northlands School</b> in Argentina, where I led all student 
-            activities, and I founded and served as <b>Chief Engineer of NorLatSat</b>, my school’s 
-            CanSat (CubeSat-like) competition team. 
-        </p>
-        <p>
             I am passionate about aerospace, electric propulsion, and autonomous systems, and I’m excited to 
-            keep exploring how technology can solve real-world problems. You can learn more about me in the 
-            <a href="bio.html">Bio</a> section.
+            keep exploring how technology can solve real-world problems. You can learn more about my work in the 
+            <a href="projects.html">Projects</a> section.
         </p>
     </section>
 

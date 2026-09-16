@@ -1,238 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="navigation.js" defer></script>
-    <title>Index</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Valentino Cattaneo is a Purdue electrical engineering student working across electronics, embedded systems, prototyping, and hardware testing.">
+  <title>Valentino Cattaneo | Electrical Engineering</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="navigation.js" defer></script>
 </head>
-<body>
-
-    <header class="site-header">
-        <div class="header-inner">
-            <h1><a href="index.html">Valentino Cattaneo</a></h1>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu">
-                <span></span><span></span><span></span>
-            </button>
-            <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
-                <a href="index.html" aria-current="page">Home</a>
-                <a target="_blank" href="most updated resume.pdf">Resume</a>
-                <div class="nav-dropdown">
-                    <a class="nav-dropdown-toggle" href="projects.html" aria-haspopup="true">Projects <span aria-hidden="true">▾</span></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="projects.html#vfs-purdue">VFS Purdue</a>
-                        <a class="nav-subitem" href="projects.html#vfs-250kg-vehicle">250kg Vehicle</a>
-                        <a class="nav-subitem" href="projects.html#vfs-scale-prototype">40% Scale Prototype</a>
-                        <a href="projects.html#lidar-drone">L.I.D.A.R. Drone</a>
-                        <a href="projects.html#modular-control-esc">Modular Control ESC</a>
-                    </div>
-                </div>
-                <a href="contact.html">Contact</a>
-                <a href="links.html">Links</a>
-            </nav>
+<body class="home-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <h1><a href="index.html">Valentino Cattaneo</a></h1>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="Valentino_Cattaneo_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <div class="nav-dropdown">
+          <a class="nav-dropdown-toggle" href="projects.html" aria-haspopup="true">Projects <span aria-hidden="true">▾</span></a>
+          <div class="nav-dropdown-menu">
+            <a href="vfs-purdue.html">VFS Purdue</a>
+            <a class="nav-subitem" href="vfs-purdue.html#vfs-stage1">Stage 1 architecture</a>
+            <a class="nav-subitem" href="vfs-purdue.html#vfs-prototype">Prototype integration</a>
+            <a class="nav-subitem" href="vfs-purdue.html#vfs-fullscale">Stage 2 architecture</a>
+            <a class="nav-subitem" href="vfs-purdue.html#vfs-stage3">Stage 3 final design</a>
+            <a class="nav-subitem" href="vfs-purdue.html#vfs-bms">Battery management</a>
+            <a href="six-phase-drive.html">Six-Phase Motor Drive</a>
+            <a href="modular-control-esc.html">Modular Control ESC</a>
+          </div>
         </div>
-    </header>
+        <a href="contact.html">Contact</a>
+        <a href="links.html">Links</a>
+      </nav>
+    </div>
+  </header>
 
-    <section>
-        <h2>Hello! Welcome To My Portfolio</h2>
-        <p>
-            I am Valentino Cattaneo, a student pursuing a Bachelor of Science in 
-            <b>Electrical Engineering at Purdue University</b> with 3.94 GPA, 
-            concentrating in Power and Energy Systems and graduating in May 2028.
-            Here lies a collection of personal, academic, and professional projects 
-            I have worked on and a small reflection of what each of these taught me. 
-            I am always looking for new opportunities to learn and grow, so please feel 
-            free to reach out if you have any questions or would like to collaborate 
-            on a project!
-        </p>
-<p>
-    Here, you can learn a little about me and find brief introductions to my main projects, 
-    both in and outside of school. In the <a href="projects.html">Projects</a> section of this 
-    site, I highlight the main technical decisions, design iterations, challenges, and validation 
-    work behind each project. My goal is not only to show what I built, but also to explain 
-    how I approached each engineering problem and what I learned from the process.
-</p>
-
-        </p>
-        <figure class="feature-photo">
-            <img src="me_carrying_the_drone_flight_test_day.jpg" alt="Valentino carrying the VFS prototype drone on flight test day">
-            <figcaption>Shake testing VFS's prototype drone on flight test day</figcaption>
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Electrical engineering · Purdue University</p>
+          <h2 id="hero-title">Turning ideas into <em>working hardware.</em></h2>
+          <p class="hero-lead">I’m Valentino Cattaneo. I work across electronics, firmware, prototyping, and system testing to solve the practical problems that connect a design to a working product.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="projects.html">Explore my projects <span aria-hidden="true">↗</span></a>
+            <a class="button button-outline" href="contact.html">Get in touch</a>
+          </div>
+          <p class="hero-note">B.S. Electrical Engineering · Power &amp; Energy Systems · Class of 2028</p>
+        </div>
+        <figure class="hero-image">
+          <img src="me_carrying_the_drone_flight_test_day.jpg" alt="Valentino shake-testing the Stage 2 drone" fetchpriority="high">
+          <figcaption>Shake testing VFS's prototype drone on flight day</figcaption>
         </figure>
-        <h3>About Me</h3>
-        <p>
-            I am an aspiring engineer with a deep interest and passion for creating electric propulsion, 
-            embedded hardware and autonomous systems that can make a positive impact on the world. I've participated
-            in several projects where I've developed my skills in designing, building and testing these:
-            I've served as Vice President and am the current <b>President</b> of the 
-            <a href="https://vfs-go-aero.github.io/" target="_blank"><b>Vertical Flight 
-            Systems (VFS) Purdue</b></a> organization, leading the team towards developing
-            a 250 kg autonomous eVTOL for emergency response; I worked at the 
-            <a href="https://mattwklee.github.io/" target="_blank"><b>Purdue POWER Lab</b></a>
-             as an <b>Undergraduate Researcher</b> developing multi-phase motor drives for UAV applications; and
-             , from May to August of 2026, I worked as an <b>Electrical Engineering Intern</b> at
-            <a href="https://angelaerialsystems.com/" target="_blank"><b>Angel Aerial Systems</b></a>,
-            where I focused most of my time developing our battery pack, from the bare cells pack assembly
-            process to the design and firmware integration of the battery management system. 
-        </p>
-<p>Below, you can find a more in-depth description of these experiences and the technical responsibilities I held in each role.</p>
-
-<h4>Angel Aerial Systems</h4>
-
-<p>
-    Since May 2026, I have worked as an <b>Electrical Engineering Intern</b> at
-    <b>Angel Aerial Systems</b>, where I contribute to the battery-system development
-    for the Trio Scout, a rapidly deployable tricopter designed for flights of up to
-    100 minutes. My work spans the complete battery system, including pouch-cell
-    assembly, high-current interconnects, mechanical integration, BMS electronics,
-    embedded firmware, and system-level validation.
-</p>
-
-<p>
-    A major focus of my internship has been the <b>redesign of the aircraft's Battery
-    Management System (BMS)</b> to improve reliability, serviceability, protection,
-    and diagnostic capability. I helped translate field observations and operational
-    requirements into hardware and firmware improvements, contributing to circuit
-    design, component selection, PCB development, communication interfaces, fault
-    handling, data logging, and hardware bring-up. I also worked extensively on
-    debugging existing hardware and software, including leading the BMS-side root
-    cause investigation of a battery-pack issue and using the findings to inform
-    subsequent design improvements.
-</p>
-
-<p>
-    On the pack side, I helped transition the pouch-cell assembly to resistance-welded
-    interconnects and designed the associated electrical and mechanical interfaces in
-    Siemens NX. This required close collaboration with the mechanical team as we
-    iterated on circuit-board geometry, cell-tab forming, component positioning,
-    assembly sequencing, structural constraints, and service access within a highly
-    space-constrained battery pack. The work taught me how strongly electrical,
-    mechanical, thermal, and manufacturing decisions influence one another in a
-    tightly integrated aerospace system.
-</p>
-
-<p>
-    I have also supported the development of test procedures and manufacturing
-    processes used to bring up and validate the system. This has included checking
-    electrical interfaces, verifying protection and monitoring behavior, evaluating
-    assembly methods, and troubleshooting interactions between the battery pack,
-    aircraft electronics, and embedded software.
-</p>
-
-<p>
-    Overall, this experience has given me hands-on responsibility for a
-    safety-critical electrical system across the full engineering cycle, from
-    investigating field issues and defining requirements to designing hardware,
-    writing firmware, developing assembly processes, and validating the completed
-    system.
-</p>
-
-<figure class="feature-photo">
-    <img src="angel_aerial_team_picture_with_drones.png"
-         alt="The Angel Aerial Systems team with their aircraft">
-    <figcaption>The Angel Aerial Systems team with our aircraft</figcaption>
-</figure>
-
-<h4>Vertical Flight Systems (VFS) Purdue</h4>
-
-<p>
-    At Purdue, I serve as the <b>President of VFS Purdue</b> for the International
-    GoAERO VTOL Competition, where I lead a multidisciplinary team of approximately
-    30 engineering students in designing and building an autonomous, human-carrying
-    aircraft. Our team earned the
-    <a href="https://www.goaeroprize.com/stage-1-winning-teams/go-aero-purdue"
-       target="_blank"><b>NASA University Innovation Award</b></a>
-    during Stage 1 of the competition.
-</p>
-
-<p>     During the initial design stage, I developed a preliminary aircraft-sizing tool     in MATLAB and contributed to propulsion, avionics, energy-storage, and electrical     architecture trade studies. This work helped connect the competition's mission     requirements with practical constraints such as aircraft mass, endurance, power     demand, controllability, and component availability given the current supply-chain hurdles in the drone space. </p>
-
-<p>
-    For Stage 2, our team designed, constructed, and autonomously flew a 40-percent-scale
-    prototype. My technical responsibilities included propulsion and avionics sizing,
-    electrical architecture, wiring and power-distribution design, component
-    integration, and support during ground and flight testing. Working through the
-    prototype's integration and test campaign gave me experience turning subsystem
-    designs into a complete aircraft and troubleshooting the electrical, mechanical,
-    and software interactions that only become visible at the system level.
-</p>
-
-<p>
-    For Stage 3, I am leading the team through the design and manufacturing of the
-    full-scale aircraft. My role includes coordinating design reviews, procurement,
-    manufacturing, testing, scheduling, safety planning, and technical decisions
-    across the team's subgroups. Alongside these leadership responsibilities, I am
-    focusing my technical work on the design of a roughly 100 V monitoring and
-    balancing BMS for the aircraft's 14.4 kWh battery pack. This involves developing
-    an architecture that can safely monitor a large series-connected battery while
-    supporting reliable communication, fault detection, balancing, and integration
-     with the rest of our avionics.
-</p>
-
-<figure class="feature-photo">
-    <img src="vfs_prototype_drone_flying.jpg"
-         alt="The VFS prototype aircraft during an autonomous test flight">
-    <figcaption>Our VFS prototype aircraft during a test flight</figcaption>
-</figure>
-
-<div class="photo-gallery">
-    <div class="photo-item">
-        <img src="team_photo.jpg" alt="The VFS team at the prototype's first test flight">
-        <p>The VFS team at our prototype's first test flight</p>
-    </div>
-    <div class="photo-item">
-        <img src="photo_valen_drone.png"
-             alt="Valentino wiring low-voltage peripherals on the prototype aircraft">
-        <p>Wiring low-voltage peripherals to the prototype's 12 V power bus</p>
-    </div>
-</div>
-
-<h4>Purdue POWER Lab</h4>
-
-<p>
-    From June through December 2025, I worked as an
-    <b>Undergraduate Researcher</b> at the
-    <a href="https://mattwklee.github.io/" target="_blank"><b>Purdue POWER Lab</b></a>,
-    where I supported the development and testing of a six-phase motor and drive
-    prototype for UAV propulsion. My work combined motor-control simulation, embedded
-    control development, PCB design, hardware bring-up, and experimental validation.
-</p>
-
-<p>     I began by developing a Simulink model of two synchronized three-phase     Field-Oriented Control loops used to operate the six-phase machine,which allowed     us to evaluate the proposed control architecture and validate the overall control behavior before moving forward with the physical system. </p>
-
-<p>
-    I also designed and routed a magnetic encoder PCB in Altium to provide precise
-    rotor-position feedback to the motor controller. I then supported the integration
-    of the encoder, control firmware, inverter hardware, and modified motor into the
-    complete propulsion test setup. As testing progressed, I contributed to initial
-    board bring-up, signal verification, control-loop tuning, current and speed-loop
-    validation, and troubleshooting across the hardware and firmware interfaces.
-</p>
-
-<p>     The project culminated in testing on a propeller-based propulsion test     stand, including operation of the complete six-phase system at peak test speeds and power.     This work gave me hands-on experience with multiphase machines, power-electronic     motor drives, advanced feedback control, real-time embedded systems, PCB     development, and the practical challenges involved in taking a control design     from simulation to a working electromechanical system. </p>
-
-<div class="photo-gallery">
-    <div class="photo-item">
-        <img src="oscilloscope1.jpg"
-             alt="Measured voltages and currents from the six-phase motor-drive prototype">
-        <p>Phase A and A' voltage and current measurements during six-phase operation</p>
-    </div>
-    <div class="photo-item">
-        <img src="oscilloscope2.jpg"
-             alt="Measured six-phase back-EMF from the modified motor">
-        <p>Measured six-phase back-EMF from the modified motor</p>
-    </div>
-</div>
-
-<p>     Across these experiences, I have become especially interested in the intersection     of aerospace systems, power electronics, embedded controls, and electric     propulsion. I enjoy working on problems that require both detailed electrical     design and an understanding of how hardware, software, manufacturing, and both high and low-level requirements come together. You can learn more about selected technical work in     the <a href="projects.html">Projects</a> section. </p>
-
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Valentino Cattaneo. All rights reserved.</p>
-        <a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" id="linkedin-link">
-            <img src="src/img/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930480.png" alt="LinkedIn Profile" id="linkedin-logo">
-        </a>
-    </footer>
+    <div class="home-content">
+      <section class="intro-band" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">A little about me</p>
+          <h2 id="intro-title">Building, testing and improving the intersection of electrical and electronic systems.</h2>
+        </div>
+        <div class="intro-text">
+          <p>I’m pursuing a B.S. in Electrical Engineering at Purdue University, concentrating in Power and Energy Systems, with a 3.94 GPA and an expected graduation in May 2028. I’m drawn to the work between a design and a dependable system: building prototypes, writing firmware, debugging interfaces, and making hardware practical to assemble and test.</p>
+          <p>This portfolio covers personal, academic, and professional work. In each project, I try to show the decisions, iterations, testing, and lessons behind the finished hardware.</p>
+        </div>
+      </section>
+
+      <section class="featured-work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">Selected work</p><h2 id="work-title">Projects in focus<span class="gold-dot">.</span></h2></div>
+          <a class="text-link" href="projects.html">View all projects <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="project-grid">
+          <article class="project-card project-card-featured">
+            <a class="card-image" href="vfs-purdue.html" aria-label="Explore Vertical Flight Systems Purdue"><img src="src/img/vfs-prototype-hangar.webp" alt="VFS prototype aircraft in a hangar" loading="lazy"></a>
+            <div class="card-copy">
+              <p class="eyebrow">01 / System design &amp; integration</p>
+              <h3><a href="vfs-purdue.html">Vertical Flight Systems Purdue</a></h3>
+              <p>Leading an autonomous aircraft project that spans system architecture, battery design, power distribution, prototype integration, and flight validation.</p>
+              <a class="card-link" href="vfs-purdue.html">See the project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <a class="card-image diagram-image" href="six-phase-drive.html" aria-label="Explore the six-phase motor-drive research project"><img src="src/img/proposed dual 3 phase foc block diagram.png" alt="Block diagram of the proposed dual three-phase field-oriented control architecture" loading="lazy"></a>
+            <div class="card-copy">
+              <p class="eyebrow">02 / Research &amp; motor control</p>
+              <h3><a href="six-phase-drive.html">Six-Phase Motor Drive</a></h3>
+              <p>Developing a dual three-phase drive from control architecture and stator prototyping through custom encoder hardware and sensored FOC testing.</p>
+              <a class="card-link" href="six-phase-drive.html">See the project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+          <article class="project-card">
+            <a class="card-image diagram-image" href="modular-control-esc.html" aria-label="Explore the Modular Control ESC"><img src="src/img/esc-architecture.svg" alt="Diagram of a three-phase motor drive and controller" loading="lazy"></a>
+            <div class="card-copy">
+              <p class="eyebrow">03 / Power electronics &amp; controls - project in progress</p>
+              <h3><a href="modular-control-esc.html">Modular Control ESC</a></h3>
+              <p>A flexible hardware platform for implementing and comparing motor-control algorithms and rotor-position estimators.</p>
+              <a class="card-link" href="modular-control-esc.html">See the project <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience" aria-labelledby="experience-title">
+        <div class="section-heading experience-heading">
+          <div><p class="eyebrow">Where I’ve worked</p><h2 id="experience-title">Experience<span class="gold-dot">.</span></h2></div>
+          <p>Across industry, research, and student-led projects, I’ve learned how to carry a design from an idea through prototyping, hardware bring-up, and validation.</p>
+        </div>
+
+        <article class="experience-entry" id="angel-aerial">
+          <div class="experience-meta">
+            <span class="entry-number">01</span><p class="eyebrow">Industry · May to August 2026</p>
+            <h3>Angel Aerial Systems</h3><p class="role">Electrical Engineering Intern</p>
+            <p class="entry-topics">Battery packs / BMS hardware &amp; firmware / System validation</p>
+            <a class="text-link" href="https://angelaerialsystems.com/" target="_blank" rel="noopener">Company website <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="experience-story">
+            <p>At Angel Aerial Systems, I contributed to battery-system development for the Trio Scout, a rapidly deployable tricopter designed for flights of up to 100 minutes. My work covered pouch-cell assembly, high-current interconnects, mechanical integration, BMS electronics, embedded firmware, and system-level validation.</p>
+            <p>A major focus was redesigning the aircraft’s Battery Management System to improve reliability, serviceability, protection, and diagnostics. I helped turn field observations into circuit, PCB, communication, fault-handling, and data-logging improvements. I also led the BMS-side root-cause investigation of a battery-pack issue and used the findings to inform later design changes.</p>
+            <p>On the pack side, I helped transition assembly to resistance-welded interconnects and designed electrical and mechanical interfaces in Siemens NX. Working with the mechanical team on board geometry, cell-tab forming, component placement, assembly, and service access showed me how closely electrical, mechanical, thermal, and manufacturing decisions interact.</p>
+            <p>I supported test and manufacturing procedures, verifying electrical interfaces and protection behavior while troubleshooting interactions among the pack, aircraft electronics, and embedded software. The internship gave me hands-on responsibility through the full engineering cycle, from field investigation and requirements to design, firmware, assembly, and validation.</p>
+            <figure class="story-photo"><img src="angel_aerial_team_picture_with_drones.png" alt="The Angel Aerial Systems team with their aircraft" loading="lazy"><figcaption>The Angel Aerial Systems team with our aircraft</figcaption></figure>
+          </div>
+        </article>
+
+        <article class="experience-entry" id="vfs-purdue-experience">
+          <div class="experience-meta">
+            <span class="entry-number">02</span><p class="eyebrow">Student leadership · Purdue</p>
+            <h3>Vertical Flight Systems Purdue</h3><p class="role">President</p>
+            <p class="entry-topics">Systems architecture / Power distribution / Energy storage / Team leadership</p>
+            <a class="text-link" href="vfs-purdue.html">Explore VFS work <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="experience-story">
+            <p>As president of VFS Purdue, I lead a multidisciplinary team of about 30 students designing and building an autonomous, human-carrying aircraft for the International GoAERO VTOL Competition. Our team received the <a href="https://www.goaeroprize.com/stage-1-winning-teams/go-aero-purdue" target="_blank" rel="noopener">NASA University Innovation Award</a> during Stage 1.</p>
+            <p>During initial design, I developed a preliminary aircraft-sizing tool in MATLAB and contributed to propulsion, avionics, energy-storage, and electrical-architecture trade studies. We connected mission requirements to constraints such as mass, endurance, power demand, controllability, and component availability.</p>
+            <p>For Stage 2, we designed, built, and autonomously flew a 40-percent-scale prototype. I worked on propulsion and avionics sizing, power distribution, wiring, component integration, and ground and flight testing. It was a chance to see subsystem designs become a complete aircraft while troubleshooting the interactions that only appear at system level.</p>
+            <p>For Stage 3, I’m coordinating design reviews, procurement, manufacturing, testing, scheduling, safety planning, and technical decisions for the full-scale aircraft. My technical focus is a roughly 100 V monitoring and balancing BMS for its 14.4 kWh battery pack, including communication, fault detection, and avionics integration.</p>
+            <figure class="story-photo"><img src="vfs_prototype_drone_flying.jpg" alt="The VFS prototype aircraft during an autonomous test flight" loading="lazy"><figcaption>Our VFS prototype aircraft during a test flight</figcaption></figure>
+            <div class="story-gallery">
+              <figure class="story-photo"><img src="team_photo.jpg" alt="The VFS team at the prototype's first test flight" loading="lazy"><figcaption>The team at our prototype’s first test flight</figcaption></figure>
+              <figure class="story-photo"><img src="photo_valen_drone.png" alt="Valentino wiring low-voltage peripherals on the prototype aircraft" loading="lazy"><figcaption>Wiring peripherals to the prototype’s 12 V power bus</figcaption></figure>
+            </div>
+          </div>
+        </article>
+
+        <article class="experience-entry" id="power-lab">
+          <div class="experience-meta">
+            <span class="entry-number">03</span><p class="eyebrow">Research · June to December 2025</p>
+            <h3>Purdue POWER Lab</h3><p class="role">Undergraduate Researcher</p>
+            <p class="entry-topics">Six-phase motor drives / FOC / PCB design / Testing</p>
+            <a class="text-link" href="six-phase-drive.html">Explore the research <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="experience-story">
+            <p>I supported development and testing of a six-phase motor and drive prototype for UAV propulsion. The work combined motor-control simulation, embedded control development, PCB design, hardware bring-up, and experimental validation.</p>
+            <p>I developed a Simulink model of two synchronized three-phase Field-Oriented Control loops to evaluate the control architecture before building the physical system. I also designed and routed a magnetic encoder PCB in Altium for precise rotor-position feedback.</p>
+            <p>During integration, I worked across the encoder, control firmware, inverter, and modified motor. I contributed to board bring-up, signal verification, control-loop tuning, current and speed-loop validation, and hardware-firmware troubleshooting.</p>
+            <p>The project culminated in testing on a propeller-based propulsion stand, including operation at peak test speeds and power. It gave me practical experience taking a motor-control design from simulation to a working electromechanical system.</p>
+            <div class="story-gallery">
+              <figure class="story-photo"><img src="oscilloscope1.jpg" alt="Measured voltages and currents from the six-phase motor-drive prototype" loading="lazy"><figcaption>Phase A and A′ voltage and current during six-phase operation</figcaption></figure>
+              <figure class="story-photo"><img src="oscilloscope2.jpg" alt="Measured six-phase back-EMF from the modified motor" loading="lazy"><figcaption>Measured six-phase back-EMF from the modified motor</figcaption></figure>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="home-footer"><div><p>&copy; 2026 Valentino Cattaneo</p><a href="contact.html">Contact</a><a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></div></footer>
 </body>
 </html>

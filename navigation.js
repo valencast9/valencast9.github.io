@@ -32,3 +32,25 @@ if (menuButton && navigation) {
         }
     });
 }
+
+// Preserve bookmarks to sections from the former single-page projects layout.
+if (window.location.pathname.endsWith('/projects.html')) {
+    const projectDestinations = {
+        '#vfs-purdue': 'vfs-purdue.html',
+        '#vfs-250kg-vehicle': 'vfs-purdue.html#vfs-250kg-vehicle',
+        '#vfs-powertrain-sizing': 'vfs-purdue.html#vfs-powertrain-sizing',
+        '#vfs-sizing-title': 'vfs-purdue.html#vfs-powertrain-sizing',
+        '#vfs-decisions-title': 'vfs-purdue.html#vfs-design-decisions',
+        '#vfs-bms': 'vfs-purdue.html#vfs-bms',
+        '#vfs-bms-title': 'vfs-purdue.html#vfs-bms',
+        '#vfs-scale-prototype': 'vfs-purdue.html#vfs-scale-prototype',
+        '#six-phase-drive': 'six-phase-drive.html',
+        '#modular-control-esc': 'modular-control-esc.html'
+    };
+    const followProjectBookmark = () => {
+        const destination = projectDestinations[window.location.hash];
+        if (destination) window.location.replace(destination);
+    };
+    followProjectBookmark();
+    window.addEventListener('hashchange', followProjectBookmark);
+}

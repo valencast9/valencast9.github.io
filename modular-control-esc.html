@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An in-development STM32H743 motor-control platform for comparing control algorithms and rotor-position estimators on shared hardware.">
+  <title>Modular Control ESC | Valentino Cattaneo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+  <script src="navigation.js" defer></script>
+</head>
+<body class="portfolio-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-brand" href="index.html">Valentino Cattaneo</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="Valentino_Cattaneo_resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="projects.html" >Projects <span aria-hidden="true">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="vfs-purdue.html" >VFS Purdue</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage1">Stage 1 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-prototype">Prototype integration</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-fullscale">Stage 2 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage3">Stage 3 final design</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-bms">Battery management</a>
+          <a href="six-phase-drive.html" >Six-Phase Motor Drive</a>
+          <a href="modular-control-esc.html" aria-current="page">Modular Control ESC</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </div>
+</header>
+<main class="portfolio-main" id="main-content">
+<header class="page-intro project-intro"><a class="back-link" href="projects.html">← All projects</a><p class="eyebrow">Personal project · In development</p><h1>Modular Control ESC<span class="gold-dot">.</span></h1><p class="intro-copy">A common motor-drive platform for exploring control algorithms, feedback methods, and rotor-position estimators.</p></header>
+<figure class="architecture-figure"><img src="src/img/esc-architecture.svg" width="800" height="500" alt="Planned controller, three-phase inverter, motor, and feedback architecture"><figcaption>Conceptual architecture of the planned motor-control platform.</figcaption></figure>
+<section class="story-section"><div class="story-prose"><h2>One platform, multiple control approaches</h2><p>I am designing a modular motor-driver platform to deploy and compare motor-control algorithms and rotor-position estimators on the same hardware. Keeping the inverter and motor consistent provides a common basis for exploring how different control approaches behave.</p><p>The planned design uses an STM32H743, a three-phase inverter, gate drivers, current sensing, and DC-link measurement. The power target is 1 kW, with support planned for encoders, Hall sensors, and sensorless position estimation.</p><h3>Designing for experimentation</h3><p>The platform is intended to support field-oriented control (FOC), deadbeat control, model predictive control (MPC), and direct torque control (DTC). I am currently working on the hardware that will make those comparisons possible. Control implementation and comparative results will follow as the inverter and measurement interfaces are brought up and tested.</p></div></section>
+<nav class="next-project" aria-label="More projects"><a href="six-phase-drive.html">← Six-Phase Motor Drive</a><a href="projects.html">All projects →</a></nav>
+</main>
+<footer class="portfolio-footer"><div><p>&copy; 2026 Valentino Cattaneo</p><a href="contact.html">Get in touch</a><a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" rel="noopener">LinkedIn ↗</a></div></footer>
+</body>
+</html>

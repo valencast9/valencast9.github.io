@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Powertrain and avionics development for Purdue's GoAERO aircraft, from early architecture studies through prototype flight testing and the final Stage 3 aircraft now in manufacturing.">
+  <title>VFS Purdue | Valentino Cattaneo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+  <script src="navigation.js" defer></script>
+</head>
+<body class="portfolio-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-brand" href="index.html">Valentino Cattaneo</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="Valentino_Cattaneo_resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="projects.html">Projects <span aria-hidden="true">&#9662;</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="vfs-purdue.html" aria-current="page">VFS Purdue</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage1">Stage 1 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-prototype">Prototype integration</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-fullscale">Stage 2 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage3">Stage 3 final design</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-bms">Battery management</a>
+          <a href="six-phase-drive.html">Six-Phase Motor Drive</a>
+          <a href="modular-control-esc.html">Modular Control ESC</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </div>
+</header>
+
+<main class="portfolio-main" id="main-content">
+  <header class="page-intro project-intro">
+    <a class="back-link" href="projects.html">&larr; All projects</a>
+    <p class="eyebrow">Purdue University &middot; GoAERO Competition</p>
+    <h1>Vertical Flight<br>Systems Purdue<span class="gold-dot">.</span></h1>
+    <p class="intro-copy">Powertrain and avionics development from the first aircraft concepts through a flight-tested prototype to the final aircraft now in manufacturing.</p>
+  </header>
+
+  <div class="story-opening">
+    <div>
+      <p>I serve as President of <a href="https://vfs-go-aero.github.io/" target="_blank" rel="noopener">Vertical Flight Systems Purdue</a>, leading an interdisciplinary team of approximately 30 students developing a human-carrying aircraft for the <b>GoAERO Competition</b>. The program progressed from a Stage 1 concept, through a 32 kg flight-test demonstrator and an intermediate Stage 2 full-scale architecture, to the 248 kg Stage 3 aircraft that we are now manufacturing.</p>
+      <p>I led the Powertrain and Avionics sections of the Stage 1 and Stage 2 reports and contributed that work to our published <a href="https://arc.aiaa.org/doi/10.2514/6.2026-4585" target="_blank" rel="noopener">AIAA AVIATION 2026 paper</a>. My role has spanned mission-driven sizing, motor and battery selection, electrical architecture, wiring design, prototype integration, flight preparation, and the battery-management electronics for the final aircraft.</p>
+    </div>
+    <aside class="project-facts" aria-label="Project overview">
+      <p><span>My role</span>President &middot; Electrical systems</p>
+      <p><span>Scope</span>Powertrain &middot; Avionics &middot; Integration</p>
+      <p><span>Prototype</span>32 kg &middot; 40% scale &middot; Autonomous flight</p>
+      <p><span>Final aircraft</span>248 kg MTOW &middot; 94 kg payload &middot; 15 min target</p>
+      <p><span>Team milestones</span>U.S. University Innovation Award<br>More than $74,000 raised</p>
+      <a href="https://vfs-go-aero.github.io/" target="_blank" rel="noopener">Visit the team website &#8599;</a>
+    </aside>
+  </div>
+
+  <figure class="story-photo hero-photo">
+    <a href="src/img/vfs-prototype-hangar.webp" target="_blank" rel="noopener" aria-label="Open photo of the assembled VFS prototype inside a hangar in a new tab"><img src="src/img/vfs-prototype-hangar.webp" width="1375" height="960" fetchpriority="high" alt="The assembled VFS prototype inside a hangar"></a>
+    <figcaption>The 40%-scale aircraft gave the team a real platform for moving from system diagrams to hardware, wiring, calibration, and flight.</figcaption>
+  </figure>
+
+  <ol class="program-timeline" aria-label="Powertrain and avionics development timeline">
+    <li><span>01</span><strong>Select</strong><small>Convert mission rules into an aircraft and powertrain architecture.</small></li>
+    <li><span>02</span><strong>Design</strong><small>Size the propulsion system and define the electrical interfaces.</small></li>
+    <li><span>03</span><strong>Build and integrate</strong><small>Manufacture the demonstrator and bring every subsystem online.</small></li>
+    <li><span>04</span><strong>Validate and finalize</strong><small>Use prototype data to close the Stage 3 design for manufacturing.</small></li>
+  </ol>
+
+  <nav class="contribution-nav" aria-label="VFS project sections">
+    <span>Project story</span>
+    <a href="#vfs-stage1">Stage 1 selection</a>
+    <a href="#vfs-powertrain-sizing">Powertrain sizing</a>
+    <a href="#vfs-prototype">Prototype build</a>
+    <a href="#vfs-flight">Flight validation</a>
+    <a href="#vfs-fullscale">Stage 2 architecture</a>
+    <a href="#vfs-stage3">Stage 3 final design</a>
+    <a href="#vfs-bms">Battery management</a>
+  </nav>
+
+  <section class="story-section" id="vfs-stage1">
+    <div class="section-heading">
+      <p class="eyebrow">01 / Competition Stage 1 &middot; Select</p>
+      <h2>Turning mission rules<br>into an aircraft architecture</h2>
+    </div>
+    <div class="story-prose">
+      <p>Stage 1 began with requirements rather than a preferred aircraft. The vehicle needed to carry at least 57 kg in the adversity and maneuvering missions, fit its rotor disk inside a 15 ft diameter, achieve a 2:1 thrust-to-weight ratio at maximum input power, withstand dust and rain, preserve access to the payload bay, and support rapid battery swaps. Those constraints tied the airframe, propulsion, and avionics decisions together from the beginning.</p>
+      <p>We compared gasoline, hydrogen fuel cells, and batteries. The mission profile emphasized short, power-intensive flight and allowed energy resupply, so the high power capability, availability, and simpler distributed installation of batteries outweighed the energy-density advantage of combustion or hydrogen systems. Lithium-ion became the baseline.</p>
+    </div>
+
+    <div class="decision-grid" aria-label="Stage 1 design decisions">
+      <article><span>Energy</span><h3>Battery electric</h3><p>Selected for high power output, practical handling, and compatibility with modular swaps.</p></article>
+      <article><span>Configuration</span><h3>Coaxial quadrotor</h3><p>Eight motors reduced the planform disk area and kept the payload loading paths accessible.</p></article>
+      <article><span>Electrical trade</span><h3>100 V or 400 V</h3><p>The report compared 100 V at 170 A with 400 V at 42 A, balancing thermal losses against handling risk.</p></article>
+      <article><span>Avionics concept</span><h3>Split onboard and ground compute</h3><p>The aircraft retained flight-critical state, motor control, health monitoring, and detect-and-avoid functions onboard.</p></article>
+    </div>
+
+    <div class="story-split">
+      <div>
+        <h3>Powertrain and avionics were designed together</h3>
+        <p>The Stage 1 power system separated the upper and lower motor groups into two independent circuits and kept avionics on its own battery so a propulsion-pack swap would not reboot the flight systems. The avionics concept prioritized video, position and pose, state of charge, time of flight, mission phase, and detected obstacles for the operator.</p>
+        <p>The first architecture also established an important safety boundary: ground computation could handle route planning and reconnaissance processing, but the onboard computer still had to keep the aircraft safe if the ground link disappeared.</p>
+      </div>
+      <figure class="story-photo">
+        <a href="src/img/vfs-powertrain-hardware.webp" target="_blank" rel="noopener" aria-label="Open photo of VFS propulsion hardware in a new tab"><img src="src/img/vfs-powertrain-hardware.webp" width="1452" height="992" loading="lazy" alt="VFS team members holding a motor and motor controller in the workshop"></a>
+        <figcaption>Picture of me and Sota when we first opened the full-scale vehicle (Stage 3) motors from their delivery boxes.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="story-section" id="vfs-powertrain-sizing">
+    <div class="section-heading">
+      <p class="eyebrow">02 / Powertrain sizing &middot; Design</p>
+      <h2>Closing the loop between<br>mass, power, and payload</h2>
+    </div>
+    <div class="story-prose">
+      <p>I developed a MATLAB sizing and powertrain optimization tool because battery capacity, propulsion performance, and aircraft mass could not be selected independently. A larger battery adds energy, but also increases weight and the power required to fly. The program resolves that coupling and turns the mission profile into a self-consistent set of mass, power, energy, and component estimates.</p>
+      <p>For each candidate configuration and payload, the inner loop estimates maximum takeoff mass and disk loading, calculates hover and cruise power, integrates the mission energy, converts that energy into battery mass, and feeds the result back into the aircraft mass. It repeats until the mass and power estimates converge. An outer loop then sweeps motors, propellers, battery assumptions, and multirotor layouts before rejecting solutions that violate torque, current, thrust, or propeller tip-speed limits.</p>
+    </div>
+
+    <figure class="technical-figure">
+      <a href="src/img/vfs-sizing-flowchart.png" target="_blank" rel="noopener" aria-label="Open the VFS sizing flowchart at full size in a new tab"><img src="src/img/vfs-sizing-flowchart.png" width="1371" height="906" loading="lazy" alt="Aircraft sizing flowchart showing the mass and power convergence loop, configuration search, and feasibility checks"></a>
+      <figcaption>The inner loop resolves mass and power. The outer loop searches candidate hardware and payloads, then records the highest-performing feasible solution. <a href="src/img/vfs-sizing-flowchart.png" target="_blank" rel="noopener">Open full-size diagram &#8599;</a></figcaption>
+    </figure>
+
+    <div class="story-prose">
+      <h3>Engineering margins, not just rated power</h3>
+      <p>I used a rotor figure of merit of 0.70, 95% battery efficiency, and a 70% usable-energy fraction based on baseline aircraft studies as well as further validation with the Stage 2 prototype. I also checked motor torque across the battery discharge cycle. As bus voltage falls, the voltage margin above motor back-EMF decreases, so a motor that looks acceptable at nominal voltage may no longer supply enough torque near the landing threshold. Propeller tip speed was limited below Mach 0.70 to constrain noise and compressibility effects.</p>
+    </div>
+
+    <figure class="technical-figure technical-figure--chart">
+      <a href="src/img/vfs-torque-rpm.png" target="_blank" rel="noopener" aria-label="Open the motor and propeller torque chart at full size in a new tab"><img src="src/img/vfs-torque-rpm.png" width="1230" height="693" loading="lazy" alt="Motor and propeller torque curves showing hover, cruise, and two-to-one thrust operating points across battery voltage limits"></a>
+      <figcaption>Hover and cruise remain inside the continuous-discharge torque envelope. The 2:1 thrust point sits near the nominal-voltage limit. <a href="src/img/vfs-torque-rpm.png" target="_blank" rel="noopener">Open full-size chart &#8599;</a></figcaption>
+    </figure>
+
+    <div class="story-prose">
+      <h3>How the design changed between reports</h3>
+      <p>The analysis was not a one-time answer. Stage 1 supported a coaxial eight-motor baseline using the T-MOTOR U15XL and NS57&times;22 propeller family. Stage 2 proposed a lighter four-motor aircraft using the MAD AM60 at 400 V in its proposal (with the prototype, downscaled equivalent being a 50 V system using the Titan T8120 motor; the one we flew). Prototype testing and a renewed safety review then brought Stage 3 back to an X8 layout, but with eight isolated 100 V channels and the system detail needed to manufacture it.</p>
+    </div>
+
+    <figure class="technical-figure technical-figure--wide">
+      <a href="src/img/stage 1 (left) stage 2 (right) stage 3 not finalized design (middle) render, all drones in one picture.png" target="_blank" rel="noopener" aria-label="Open the three-aircraft design evolution render at full size in a new tab"><img src="src/img/stage 1 (left) stage 2 (right) stage 3 not finalized design (middle) render, all drones in one picture.png" width="1920" height="1080" loading="lazy" alt="Render comparing the Stage 1 concept at left, an intermediate Stage 3 aircraft at center, and the Stage 2 prototype at right"></a>
+      <figcaption><strong>Three generations of development.</strong> Stage 1 concept at left, an intermediate Stage 3 development render at center, and the Stage 2 flight-test prototype at right. The final Stage 3 geometry is shown later on this page. <a href="src/img/stage 1 (left) stage 2 (right) stage 3 not finalized design (middle) render, all drones in one picture.png" target="_blank" rel="noopener">Open full-size render &#8599;</a></figcaption>
+    </figure>
+
+    <div class="design-evolution" role="group" aria-label="Stage 1, Stage 2, and Stage 3 powertrain comparison">
+      <article>
+        <p class="eyebrow">Stage 1 proposal</p>
+        <h3>Coaxial quadrotor with TMOTOR U15XXL</h3>
+        <dl><div><dt>Motors</dt><dd>8</dd></div><div><dt>Design payload</dt><dd>87.6 kg</dd></div><div><dt>Hover power</dt><dd>47.2 kW total</dd></div><div><dt>Propeller</dt><dd>57 in class</dd></div></dl>
+      </article>
+      <article>
+        <p class="eyebrow">Stage 2 selection</p>
+        <h3>Quadrotor with MAD AM60</h3>
+        <dl><div><dt>Motors</dt><dd>4</dd></div><div><dt>Optimized payload</dt><dd>105.8 kg</dd></div><div><dt>Estimated MTOW</dt><dd>249.21 kg</dd></div><div><dt>Flight between swaps</dt><dd>14 min</dd></div></dl>
+      </article>
+      <article>
+        <p class="eyebrow">Stage 3 final design</p>
+        <h3>Coaxial quadrotor with T-MOTOR U15XL</h3>
+        <dl><div><dt>Motors</dt><dd>8</dd></div><div><dt>Payload capacity</dt><dd>94 kg</dd></div><div><dt>MTOW</dt><dd>248 kg</dd></div><div><dt>Target flight time</dt><dd>15 min</dd></div></dl>
+      </article>
+    </div>
+
+    <div class="story-prose">
+      <p>The Stage 2 architecture traded the coaxial layout's redundancy for lower takeoff mass, lower structural mass, reduced parasitic drag, and fewer propulsion components. Its four independent 400 V branches isolated switching noise and limited cross-coupling. Stage 3 retained the independent-branch philosophy but returned to eight rotors and a voltage that the team could build, service, and test more safely.</p>
+      <p>Surprisingly, Stage 3 went back to a very similar configuration as our proposal design, as concerns regarding High-Voltage safety, current management and motor/ESC/battery redundancy benefits of isolated X8 powertrains pushed us to a "less efficient" but much more feasible and safe-to-operate design.</p>
+      <a class="paper-link" href="https://arc.aiaa.org/doi/10.2514/6.2026-4585" target="_blank" rel="noopener"><span><strong>Read the AIAA paper</strong><small>Full sizing methodology, assumptions, and analysis</small></span><span aria-hidden="true">&#8599;</span></a>
+    </div>
+  </section>
+
+  <section class="story-section" id="vfs-prototype">
+    <div class="section-heading">
+      <p class="eyebrow">03 / 40%-scale prototype &middot; Build and integrate</p>
+      <h2>Making the electrical<br>architecture physical</h2>
+    </div>
+    <div class="story-prose">
+      <p>The 32 kg demonstrator was the bridge between report-level architecture and a flyable system. I led propulsion and avionics integration, including component placement, power distribution, signal routing, wiring, and bringup. The detailed wiring diagram became the shared reference for assembling the aircraft and tracing faults during ground testing.</p>
+      <p>The prototype used a Cube Red flight controller, Jetson Orin companion computer, ZED X stereo camera, time-of-flight altitude LiDAR, Here RTK navigation, FPV video, telemetry and RC links, a SmartAP power-distribution board, and four motor controllers. The diagram also separated placement by aircraft region so cable length, service access, and high-current routing were considered before installation.</p>
+    </div>
+
+    <figure class="technical-figure technical-figure--wide">
+      <a href="src/img/detailed wiring diagram, vfs stage 2 (prototype drone).png" target="_blank" rel="noopener" aria-label="Open the Stage 2 prototype wiring diagram at full size in a new tab"><img src="src/img/detailed wiring diagram, vfs stage 2 (prototype drone).png" width="2317" height="1096" loading="lazy" alt="Detailed Stage 2 prototype wiring diagram showing batteries, power distribution, flight controller, companion computer, sensors, communications, and four motor controllers"></a>
+      <figcaption><strong>Prototype wiring and placement plan.</strong> Power, ground, PWM, communication, and video routes are shown together so the harness could be manufactured and checked as an aircraft-level system. <a href="src/img/detailed wiring diagram, vfs stage 2 (prototype drone).png" target="_blank" rel="noopener">Open full-size diagram &#8599;</a></figcaption>
+    </figure>
+
+    <div class="decision-grid decision-grid--three" aria-label="Prototype integration decisions">
+      <article><span>Power</span><h3>Controlled distribution</h3><p>A fused high-current path fed the PDB and ESCs, while dedicated BEC outputs supplied the voltage rails required by avionics and cameras.</p></article>
+      <article><span>Control</span><h3>Flight-critical separation</h3><p>The Cube handled stabilization and motor commands while the Jetson provided higher-level perception and autonomy compute over Ethernet.</p></article>
+      <article><span>Bringup</span><h3>Interface-by-interface checks</h3><p>Power rails, ESC command paths, sensors, navigation, telemetry, video, and the companion computer were verified before the complete aircraft was armed.</p></article>
+    </div>
+
+    <div class="story-prose">
+      <h3>Manufacturing and integration</h3>
+      <p>Manufacturing forced the system diagram to confront real constraints: connector access, strain relief, cable routing around carbon structure, sensor fields of view, thermal paths, and the separation of low-level signals from motor power. Mechanical assembly and electrical integration progressed together because a mounting decision could change harness length, serviceability, or sensor performance.</p>
+    </div>
+
+    <div class="story-gallery story-gallery--build">
+      <figure class="story-photo">
+        <a href="src/img/vfs-workshop.webp" target="_blank" rel="noopener" aria-label="Open workshop manufacturing photo in a new tab"><img src="src/img/vfs-workshop.webp" width="1390" height="1002" loading="lazy" alt="VFS team members manufacturing prototype parts at a drill press"></a>
+        <figcaption>Manufacturing prototype hardware in the workshop.</figcaption>
+      </figure>
+      <figure class="story-photo">
+        <a href="src/img/vfs-avionics-integration.webp" target="_blank" rel="noopener" aria-label="Open avionics integration photo in a new tab"><img src="src/img/vfs-avionics-integration.webp" width="1102" height="882" loading="lazy" alt="Team members installing and routing avionics on the prototype frame"></a>
+        <figcaption>Installing the electronics and routing the wiring on the airframe.</figcaption>
+      </figure>
+      <figure class="story-photo">
+        <a href="src/img/vfs-landing-gear.webp" target="_blank" rel="noopener" aria-label="Open prototype landing gear photo in a new tab"><img src="src/img/vfs-landing-gear.webp" width="1342" height="1025" loading="lazy" alt="A VFS team member holding the prototype landing gear assembly"></a>
+        <figcaption>Mechanical interfaces were developed alongside the electrical installation.</figcaption>
+      </figure>
+      <figure class="story-photo">
+        <a href="src/img/vfs-prototype-team.webp" target="_blank" rel="noopener" aria-label="Open prototype team photo in a new tab"><img src="src/img/vfs-prototype-team.webp" width="751" height="615" loading="lazy" alt="The VFS team with the assembled prototype frame"></a>
+        <figcaption>The manufactured demonstrator before the flight-test campaign.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="story-section" id="vfs-flight">
+    <div class="section-heading">
+      <p class="eyebrow">04 / Bringup and flight &middot; Fly and iterate</p>
+      <h2>From the first power-on<br>to autonomous landing</h2>
+    </div>
+    <div class="story-prose">
+      <p>Bringup moved in controlled layers. We verified the low-voltage rails and current paths first, then the flight controller, receiver, telemetry, GNSS, LiDAR, companion computer, and each ESC command channel. After sensor calibration and motor-direction checks, the aircraft progressed through ground tests, manual stabilization flights, waypoint missions, and automated landing.</p>
+    </div>
+
+    <ol class="bringup-sequence" aria-label="Prototype bringup sequence">
+      <li><span>1</span><div><strong>Power and continuity</strong><small>Verify rails, polarity, protection, and distribution before connecting sensitive electronics.</small></div></li>
+      <li><span>2</span><div><strong>Signals and sensors</strong><small>Bring up motor commands, RC, telemetry, GNSS, LiDAR, cameras, and companion-computer links.</small></div></li>
+      <li><span>3</span><div><strong>Ground and manual flight</strong><small>Check motor direction, calibrate the vehicle, and confirm stable pilot control before autonomy.</small></div></li>
+      <li><span>4</span><div><strong>Autonomous validation</strong><small>Execute waypoint missions and automated landings, then use the results to update the next design.</small></div></li>
+    </ol>
+
+    <div class="flight-results" aria-label="Prototype flight results">
+      <div><strong>Validated</strong><span>Autonomous waypoint missions</span></div>
+      <div><strong>Validated</strong><span>Bottom-LiDAR assisted landing</span></div>
+      <div><strong>About 1 m</strong><span>GPS-only landing deviation reported with the Here3 GNSS M8P</span></div>
+    </div>
+
+    <div class="story-prose">
+      <p>The scaled flight campaign validated waypoint missions and automated landing. A bottom-mounted LiDAR provided precise height above ground during the landing sequence. With GPS alone, the report recorded an automated landing roughly 1 m from the commanded coordinates, establishing a measured baseline for later RTK and vision-assisted improvements.</p>
+      <p>That result closed the first complete design loop: select an architecture, size it, build it, integrate it, fly it, and use the flight data to refine the full-scale aircraft.</p>
+    </div>
+
+    <div class="story-gallery">
+      <figure class="story-photo">
+        <a href="src/img/vfs-flight-preparation.webp" target="_blank" rel="noopener" aria-label="Open flight preparation photo in a new tab"><img src="src/img/vfs-flight-preparation.webp" width="582" height="605" loading="lazy" alt="Team members preparing the prototype at the flight field"></a>
+        <figcaption>Final checks and troubleshooting at the flight field.</figcaption>
+      </figure>
+      <figure class="story-photo">
+        <a href="src/img/vfs-flight-briefing.webp" target="_blank" rel="noopener" aria-label="Open flight briefing photo in a new tab"><img src="src/img/vfs-flight-briefing.webp" width="1331" height="672" loading="lazy" alt="The VFS team briefing around the prototype at the flight field"></a>
+        <figcaption>The team and aircraft during the flight-test campaign.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="story-section" id="vfs-fullscale">
+    <div class="section-heading">
+      <p class="eyebrow">05 / Competition Stage 2 &middot; Intermediate architecture</p>
+      <h2>Exploring the first<br>full-scale system</h2>
+    </div>
+    <div class="story-prose">
+      <p>The Stage 2 report carried the prototype lessons into a more detailed full-scale architecture. This intermediate design used a Pixhawk 6X for the safety-critical flight-control loop and a ZED Box Mini for higher-level perception and autonomy. Navigation combined RTK GNSS, downward LiDAR, and optical flow. Telemetry, manual control, and pilot video remained separate links so one radio function did not have to carry every operational responsibility.</p>
+      <p>An isolated avionics battery feeds 5 V and 12 V buses and remains connected during propulsion-pack swaps. The four powertrain branches each connect a battery source, BMS, 80 A controller, and MAD AM60 motor, while CAN ties the propulsion health data back to the flight controller.</p>
+    </div>
+
+    <figure class="technical-figure technical-figure--wide">
+      <a href="src/img/vfs stage 3 avionics wiring diagram high level design.png" target="_blank" rel="noopener" aria-label="Open the full-scale VFS avionics wiring diagram at full size in a new tab"><img src="src/img/vfs stage 3 avionics wiring diagram high level design.png" width="1687" height="860" loading="lazy" alt="Full-scale VFS avionics architecture showing powertrain, flight controller, autonomy compute, navigation sensors, communications, and ground station"></a>
+      <figcaption><strong>Intermediate full-scale system architecture.</strong> This Stage 2 design defined many interfaces carried forward, although the 400 V four-motor powertrain and several avionics selections were later superseded. <a href="src/img/vfs stage 3 avionics wiring diagram high level design.png" target="_blank" rel="noopener">Open full-size diagram &#8599;</a></figcaption>
+    </figure>
+
+    <div class="story-prose">
+      <h3>Designing for long cables and a noisy electrical environment</h3>
+      <p>A human-carrying multirotor creates wiring distances and electromagnetic conditions that small drones rarely face. CAN links for GNSS, BMS units, optical flow, and DroneCAN motor controllers use shielded twisted pairs with 120 ohm termination. UART links are shielded when they run beyond 1 m or near power conductors. The stereo camera uses GMSL2 over automotive-grade coax because it carries high-bandwidth data through a noisy environment.</p>
+      <p>The radio architecture also separates mission functions by band: 915 MHz SiK telemetry for command and status, ELRS diversity control across 2.4 GHz and 900 MHz for low-latency manual override, and 5.8 GHz DJI video for pilot views. Physical antenna separation, polarization, and channel coordination reduce self-interference.</p>
+      <h3>Navigation and control fallbacks</h3>
+      <p>RTK GNSS is the primary global-positioning source. Downward LiDAR improves altitude estimation near the ground, but reflective water can make its return unreliable, so the flood mission falls back to barometric or manual descent control. Optical flow provides relative motion below 10 m in GPS-denied areas and can be fused with LiDAR and visual-inertial odometry.</p>
+      <p>ArduPilot was selected over PX4 for its community support and sensor compatibility. The safety case therefore relies on redundant sensing, independent control links, manual override, and explicit failsafe transitions rather than assuming autonomy will always remain available.</p>
+    </div>
+
+    <figure class="technical-figure technical-figure--wide">
+      <a href="src/img/failsafe cascaded flowchart vfs drone.png" target="_blank" rel="noopener" aria-label="Open the VFS failsafe flowchart at full size in a new tab"><img src="src/img/failsafe cascaded flowchart vfs drone.png" width="1572" height="812" loading="lazy" alt="Cascaded VFS failsafe flowchart covering battery, GPS, sensor, autonomy, and communication failures"></a>
+      <figcaption><strong>Cascaded failsafe logic.</strong> Battery, GPS, sensor, autonomy, and communication faults move through autonomous recovery, pilot-assisted control, manual return, or emergency landing based on what remains available. <a href="src/img/failsafe cascaded flowchart vfs drone.png" target="_blank" rel="noopener">Open full-size diagram &#8599;</a></figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="vfs-stage3">
+    <div class="section-heading">
+      <p class="eyebrow">06 / Competition Stage 3 &middot; Final design</p>
+      <h2>Closing the design<br>for manufacturing</h2>
+    </div>
+    <div class="story-prose">
+      <p>Stage 3 is the final aircraft iteration and the point where our concept studies, sizing work, and prototype flight data converge. The selected aircraft is a four-axis coaxial octocopter with eight T-MOTOR U15XL motors and 57 inch NS57&times;22 propellers. At a 248 kg maximum takeoff mass, it is designed to carry 94 kg for a 15 minute mission and cruise at 30 m/s.</p>
+      <p>The layout is now being manufactured. The next planned milestone is the structured ground and flight-test campaign next semester, beginning with subsystem verification and restrained testing before progressing toward the full aircraft envelope.</p>
+    </div>
+
+    <figure class="technical-figure technical-figure--wide">
+      <a href="src/img/finalized cad render of stage 3 vehicle.png" target="_blank" rel="noopener" aria-label="Open the labeled final Stage 3 aircraft render at full size in a new tab"><img src="src/img/finalized cad render of stage 3 vehicle.png" width="1606" height="1097" loading="lazy" alt="Labeled final Stage 3 aircraft render showing the coaxial propulsion, landing gear, payload support, avionics enclosure, cameras, LiDAR, and radio telemetry"></a>
+      <figcaption><strong>Final Stage 3 aircraft.</strong> The labeled CAD render shows the X8 propulsion system, payload support, skid landing gear, sensor suite, radio link, and enclosed avionics and batteries. <a href="src/img/finalized cad render of stage 3 vehicle.png" target="_blank" rel="noopener">Open full-size render &#8599;</a></figcaption>
+    </figure>
+
+    <div class="stage3-specs" aria-label="Final Stage 3 design targets">
+      <div><strong>248 kg</strong><span>Maximum takeoff mass</span></div>
+      <div><strong>94 kg</strong><span>Payload capacity</span></div>
+      <div><strong>15 min</strong><span>Flight-time target at maximum payload</span></div>
+      <div><strong>32.2 kW</strong><span>Predicted hover power</span></div>
+      <div><strong>2.04</strong><span>Maximum thrust-to-weight ratio</span></div>
+    </div>
+
+    <div class="story-prose">
+      <h3>Why the final design returned to X8 and 100 V</h3>
+      <p>The mission-driven optimization again selected the U15XL and 57 inch propeller combination as the best feasible way to maximize payload. Every candidate was checked across the battery discharge cycle for thrust-to-weight ratio, motor torque, motor and battery current, and a propeller tip speed below Mach 0.70. The final operating points require 18.7 N&middot;m per motor in hover and 20.1 N&middot;m in cruise, both below the motor's 27.5 N&middot;m continuous rating. Predicted power is 32.2 kW in hover, 40.4 kW in cruise, and 50.8 kW during acceleration.</p>
+      <p>We deliberately replaced the intermediate 400 V concept with eight isolated channels below 100 V. Each ESC receives power from two 12S packs in series, about 86.4 V nominal and 100.8 V at full charge. A failed channel does not pull down a central propulsion bus, so the remaining seven can continue to operate. QS8 anti-spark connectors and 8 AWG wiring can also be assembled and serviced within a student research environment without the welded buswork and additional arc-flash controls demanded by a centralized 400 V system.</p>
+      <p>One sensor board monitors each power channel and reports to a central battery-management computer. The design adds cell-voltage and temperature monitoring, sag-compensated state estimation, per-cell internal resistance, pre-charge and contactor control, current-versus-throttle fault detection, and backup power for the avionics bus. Aerogel cell barriers were considered, but the mass and integration cost did not justify them for the selected conservative cells and monitoring strategy.</p>
+
+      <h3>What flight testing changed in the avionics</h3>
+      <p>The final avionics architecture is built around a Cube Orange+ and a Jetson-based ZED Box Mini. The Cube adds triple-redundant inertial sensing, an H7 processor, and a failsafe co-processor. A Here 4 GNSS/RTK unit is the primary global navigation source, HereFlow supplies relative motion when GNSS is unavailable, and the ZED X stereo cameras support perception and obstacle detection. Separate 915 MHz MAVLink telemetry and 2.4 GHz ELRS manual control preserve independent communication paths.</p>
+      <p>Stage 2 flight tests exposed two aircraft-level effects that bench tests could not. Rotor downwash pressurized the exposed flight controller and made its barometric altitude noisy, so the estimator now prioritizes a Lightware rangefinder near the ground, Here 4 GNSS altitude beyond range, and the Cube barometers only as a fallback. Motor vibration above roughly 40 to 50 m/s&sup2; also caused estimator velocity divergence. Mounting the controller on 10 mm foam isolation restored normal flight, and the Stage 3 structure is being designed so its natural frequencies stay outside the 1800 to 2400 RPM motor range with at least 200 RPM of separation.</p>
+      <p>The prototype ultimately held stable hover after optical-flow recalibration with stationary drift below 0.5 m/s, kept altitude deviation below 2 m, and landed within 1 m of the target. It also demonstrated lost-link return-to-launch and a safe landing after an estimator failure. Those results support the final sensor fallback chain and show that the Stage 3 architecture is a test-informed design, not simply a scaled render.</p>
+
+      <h3>Evidence behind the sizing model</h3>
+      <p>Manufacturer propeller data agreed closely with the aerodynamic fit, with figure of merit within 1.4% of published estimates. The Stage 2 prototype then provided a system-level check: predicted hover endurance stayed within 9.42% of test data, hover power within 7.60%, and cruise power within 12% at 20 m/s and above. The model still tends to underpredict power because it does not fully capture profile drag, rotor interference, auxiliary loads, and transition effects, but the agreement is strong enough for preliminary design and for comparing hardware choices.</p>
+    </div>
+  </section>
+
+  <section class="story-section" id="vfs-bms">
+    <div class="section-heading">
+      <p class="eyebrow">07 / Battery management &middot; In development</p>
+      <h2>Monitoring the full-scale<br>battery system</h2>
+    </div>
+    <div class="story-prose">
+      <p>For the full-scale aircraft, I am developing a monitoring and balancing battery-management system for the high-energy battery pack. This work connects the sizing model to the electronics that supervise the cells in operation, including pack current, cell voltage, board and pack temperature, balancing, fault reporting, and communication with the flight controller.</p>
+      <p>The current design uses an STM32H723 as the main processor. Dedicated ADCs measure cell voltage and pack current, with a Hall-effect sensor on the positive pack conductor to avoid placing a high-loss shunt in a path that can exceed 150 A. Temperature sensors connect to the MCU's internal ADCs. The firmware is based on ArduPilot's AP_Periph framework so the board can reuse ChibiOS memory handling, SPI and CAN drivers, and valid DroneCAN communication with the aircraft.</p>
+    </div>
+
+    <figure class="technical-figure technical-figure--wide">
+      <a href="src/img/block diagram of analog bms.png" target="_blank" rel="noopener" aria-label="Open the analog BMS block diagram at full size in a new tab"><img src="src/img/block diagram of analog bms.png" width="1861" height="1097" loading="lazy" alt="Analog battery-management system block diagram showing the STM32, isolated CAN and SPI, cell sensing, balancing, current sensing, and power conversion"></a>
+      <figcaption><strong>Current analog BMS architecture.</strong> The STM32 coordinates isolated SPI measurement domains, per-cell multiplexing and balancing, current and temperature sensing, power conversion, memory, and isolated CAN communication with the aircraft. <a href="src/img/block diagram of analog bms.png" target="_blank" rel="noopener">Open full-size diagram &#8599;</a></figcaption>
+    </figure>
+
+    <div class="story-prose">
+      <p>Before pursuing this design, I actually designed a schematic using TI's BQ79616, as it fit our requirements perfectly: daisy-chainable 12S high-accuracy battery monitor with several protections against pack faults, yet after digging into how we'd actually implement and code this chip, we found a lot of people having trouble with bringup since most of TI's communication protocols and register tables are not released to the public. This design was then archived and since, we have moved on to the analog route. This is the overall schematic of it though, for what it's worth:</p>
+    </div>
+
+    <figure class="technical-figure">
+      <a href="src/img/page 1 - unused TI bms schematic.png" target="_blank" rel="noopener" aria-label="Open the archived BQ79616 BMS schematic for cells 1 through 12 at full size in a new tab"><img src="src/img/page 1 - unused TI bms schematic.png" width="2061" height="1220" loading="lazy" alt="Archived BQ79616 battery monitoring schematic for cells 1 through 12, including balancing, temperature sensing, communications, and the STM32 interface"></a>
+      <figcaption><strong>Archived BQ79616 design, sheet 1 of 2.</strong> Monitoring and balancing for cells 1 through 12, temperature sensing, isolated communications, and the STM32 interface.</figcaption>
+    </figure>
+    <figure class="technical-figure">
+      <a href="src/img/page 2 - unused TI bms schematic.png" target="_blank" rel="noopener" aria-label="Open the archived BQ79616 BMS schematic for cells 13 through 24 at full size in a new tab"><img src="src/img/page 2 - unused TI bms schematic.png" width="2056" height="1206" loading="lazy" alt="Archived BQ79616 battery monitoring schematic for cells 13 through 24, including balancing, temperature sensing, and the isolated daisy-chain interface"></a>
+      <figcaption><strong>Archived BQ79616 design, sheet 2 of 2.</strong> The second monitoring module extends the architecture across cells 13 through 24.</figcaption>
+    </figure>
+  </section>
+
+  <section class="story-section" id="vfs-leadership">
+    <div class="section-heading">
+      <p class="eyebrow">08 / Team leadership</p>
+      <h2>Coordinating the team<br>behind the aircraft</h2>
+    </div>
+    <div class="story-prose">
+      <p>Alongside my technical work, I coordinate design reviews, procurement, manufacturing, testing, scheduling, and aircraft-level decisions across our subgroups. The project only advances when powertrain, avionics, autonomy, structures, and operations agree on interfaces and verification plans.</p>
+      <p>Our team earned the U.S. University Innovation Award and raised more than $74,000 toward aircraft development. Those are team achievements built through engineering work, clear ownership, and a shared willingness to build and test the system together.</p>
+    </div>
+    <figure class="story-photo wide-photo">
+      <a href="src/img/vfs-team-presentation.webp" target="_blank" rel="noopener" aria-label="Open VFS team presentation photo in a new tab"><img src="src/img/vfs-team-presentation.webp" width="1725" height="788" loading="lazy" alt="The VFS team presenting the aircraft project to a classroom audience"></a>
+      <figcaption>Presenting the program to prospective members at our fall callout.</figcaption>
+    </figure>
+  </section>
+
+  <nav class="next-project" aria-label="More projects"><a href="projects.html">&larr; All projects</a><a href="six-phase-drive.html">Next: Six-Phase Motor Drive &rarr;</a></nav>
+</main>
+
+<footer class="portfolio-footer"><div><p>&copy; 2026 Valentino Cattaneo</p><a href="contact.html">Get in touch</a><a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" rel="noopener">LinkedIn &#8599;</a></div></footer>
+</body>
+</html>

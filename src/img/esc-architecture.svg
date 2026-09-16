@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+<title id="title">Modular motor control</title><desc id="desc">Conceptual controller, three-phase inverter and motor with a feedback path.</desc>
+<defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#cfb991" stroke-opacity=".1"/></pattern></defs>
+<path fill="#2d2924" d="M0 0h800v500H0z"/><path fill="url(#grid)" d="M0 0h800v500H0z"/>
+<g stroke="#cfb991" stroke-width="2" fill="none"><rect x="65" y="175" width="155" height="110" rx="6"/><rect x="295" y="135" width="200" height="190" rx="6"/><circle cx="655" cy="230" r="65"/><path d="M220 230H295M495 190H605M495 230H590M495 270H605M655 295V375H145V285"/><path d="M287 225L295 230L287 235M140 297L145 285L150 297"/>
+<path d="M340 170V290M395 170V290M450 170V290M330 180H350M385 180H405M440 180H460M330 280H350M385 280H405M440 280H460" stroke-opacity=".7"/></g>
+<g font-family="Segoe UI, sans-serif" fill="#f7f5f0" text-anchor="middle"><text x="143" y="222" font-size="22">STM32</text><text x="143" y="250" font-size="15" fill="#cfb991">CONTROLLER</text><text x="395" y="108" font-size="17">3-PHASE INVERTER</text><text x="655" y="240" font-size="29">M</text><text x="393" y="404" fill="#cfb991" font-size="15" letter-spacing="2">CURRENT &amp; POSITION FEEDBACK</text></g>
+<text x="42" y="458" fill="#e5dac4" font-family="Segoe UI, sans-serif" font-size="16" letter-spacing="3">CONTROL / DRIVE / COMPARE</text>
+</svg>

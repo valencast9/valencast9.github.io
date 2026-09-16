@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Development of a six-phase UAV motor drive, from dual three-phase FOC architecture and stator prototyping to a custom MA732 encoder PCB and sensored closed-loop testing.">
+  <title>Six-Phase Motor Drive Research | Valentino Cattaneo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+  <script src="navigation.js" defer></script>
+</head>
+<body class="portfolio-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-brand" href="index.html">Valentino Cattaneo</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="Valentino_Cattaneo_resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="projects.html">Projects <span aria-hidden="true">&#9662;</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="vfs-purdue.html">VFS Purdue</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage1">Stage 1 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-prototype">Prototype integration</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-fullscale">Stage 2 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage3">Stage 3 final design</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-bms">Battery management</a>
+          <a href="six-phase-drive.html" aria-current="page">Six-Phase Motor Drive</a>
+          <a href="modular-control-esc.html">Modular Control ESC</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </div>
+</header>
+
+<main class="portfolio-main" id="main-content">
+  <header class="page-intro project-intro">
+    <a class="back-link" href="projects.html">&larr; All projects</a>
+    <p class="eyebrow">Purdue POWER Lab &middot; Undergraduate research</p>
+    <h1>Six-Phase Motor<br>Drive Research<span class="gold-dot">.</span></h1>
+    <p class="intro-copy">Developing a dual three-phase drive for UAV propulsion, from control architecture and the first modified stator to custom rotor-position hardware and sensored closed-loop operation.</p>
+  </header>
+
+  <section class="research-hero" aria-label="Project overview">
+    <div>
+      <p class="research-lead">I worked across the complete research cycle: defining the control approach, building the first motor and inverter prototypes, designing an encoder PCB, writing the software needed to configure it, and integrating position feedback into the physical drive.</p>
+      <p>The central challenge was to make two three-phase electrical systems behave as one six-phase machine. That meant the controller, power stage, modified stator, position sensor, and mechanical package all had to agree on the same rotor angle and timing.</p>
+      <div class="project-facts">
+        <p><span>Role</span>Undergraduate Researcher</p>
+        <p><span>Machine</span>Dual three-phase, 21 pole pairs</p>
+        <p><span>Focus</span>FOC, PCB design, bring-up, test</p>
+        <p><span>Feedback</span>MA732 configured over SPI, read through ABZ</p>
+      </div>
+    </div>
+    <figure class="story-photo">
+      <a href="src/img/modified 6 phase stator motor test stand.png" target="_blank" rel="noopener" aria-label="Open the modified six-phase stator test setup at full size (new tab)">
+        <img src="src/img/modified 6 phase stator motor test stand.png" width="630" height="732" fetchpriority="high" alt="Modified six-phase motor stator wired to test terminals on an optical bench">
+      </a>
+      <figcaption>The first modified six-phase stator on the test stand.</figcaption>
+    </figure>
+  </section>
+
+  <nav class="research-stages" aria-label="Project stages">
+    <a href="#architecture"><span>01</span>Control architecture</a>
+    <a href="#prototype"><span>02</span>Six-phase hardware</a>
+    <a href="#encoder"><span>03</span>Encoder design</a>
+    <a href="#bringup"><span>04</span>Bring-up</a>
+    <a href="#testing"><span>05</span>Closed-loop test</a>
+  </nav>
+
+  <section class="story-section research-stage" id="architecture">
+    <div class="section-heading">
+      <p class="eyebrow">01 / Control architecture</p>
+      <h2>Starting with the control loop</h2>
+    </div>
+    <div class="story-prose">
+      <p>Before modifying the motor, I worked through how the drive would be controlled. We began with a conventional three-phase motor on a dynamometer to establish a known hardware and measurement baseline, then expanded that structure into a proposed dual three-phase field-oriented control architecture.</p>
+      <p>The block diagram kept the familiar cascaded speed and current loops, Clarke and Park transforms, and space-vector modulation. Rotor position from the encoder closes the coordinate transforms, while synchronized commands feed two three-phase inverter groups. The diagram gave us a shared reference for deciding where sensing, protection, modulation, and firmware interfaces belonged before we committed to hardware.</p>
+    </div>
+    <div class="image-pair">
+      <figure class="story-photo">
+        <a href="src/img/dynamometer test setup of 3 phase motor.png" target="_blank" rel="noopener" aria-label="Open the three-phase motor dynamometer setup at full size (new tab)">
+          <img src="src/img/dynamometer test setup of 3 phase motor.png" width="655" height="732" loading="lazy" alt="Three-phase motor mounted to a laboratory dynamometer">
+        </a>
+        <figcaption>The original three-phase motor on the dynamometer established the test baseline.</figcaption>
+      </figure>
+      <figure class="story-photo">
+        <a href="src/img/proposed dual 3 phase foc block diagram.png" target="_blank" rel="noopener" aria-label="Open the dual three-phase FOC block diagram at full size (new tab)">
+          <img src="src/img/proposed dual 3 phase foc block diagram.png" width="1297" height="777" loading="lazy" alt="Proposed dual three-phase FOC block diagram with speed and current loops, transforms, modulation, two inverters, and encoder feedback">
+        </a>
+        <figcaption>The proposed control architecture linked the dual inverter, six-phase motor, and encoder feedback path.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="story-section research-stage" id="prototype">
+    <div class="section-heading">
+      <p class="eyebrow">02 / Six-phase hardware</p>
+      <h2>Building the first electrical prototype</h2>
+    </div>
+    <div class="story-prose">
+      <p>I helped create our first six-phase stator prototype by bringing out two three-phase winding groups and preparing the motor for independent drive connections. In parallel, we assembled the first power-stage prototype from a three-phase drive and a mirrored three-phase inverter, producing the six inverter legs needed to energize the modified machine.</p>
+      <p>The early setup was intentionally accessible. Terminal blocks exposed each winding connection, and bench instruments let us inspect signals while we worked through phase order, wiring, and synchronization. This stage turned the block diagram into a real electromechanical system whose interfaces could be measured and debugged.</p>
+    </div>
+    <div class="image-pair image-pair--hardware">
+      <figure class="story-photo">
+        <a href="src/img/double 3 phase (3 phase drive + 3 phase mirrored inverter) first prototype.png" target="_blank" rel="noopener" aria-label="Open the first dual three-phase inverter prototype at full size (new tab)">
+          <img src="src/img/double 3 phase (3 phase drive + 3 phase mirrored inverter) first prototype.png" width="635" height="777" loading="lazy" alt="First dual three-phase drive prototype made from two connected inverter boards">
+        </a>
+        <figcaption>The first drive prototype combined two three-phase inverter sections.</figcaption>
+      </figure>
+      <figure class="story-photo">
+        <a href="src/img/initial 6 phase motor test setup.png" target="_blank" rel="noopener" aria-label="Open the initial six-phase motor test setup at full size (new tab)">
+          <img src="src/img/initial 6 phase motor test setup.png" width="540" height="356" loading="lazy" alt="Initial six-phase motor test bench with oscilloscope, power electronics, wiring, and motor">
+        </a>
+        <figcaption>Initial integrated bench setup for six-phase bring-up and signal verification.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="story-section research-stage" id="encoder">
+    <div class="section-heading">
+      <p class="eyebrow">03 / Encoder design</p>
+      <h2>Adding rotor position for sensored control</h2>
+    </div>
+    <div class="story-prose">
+      <p>Closed-loop FOC needed an accurate rotor angle at speed, so I selected the MPS MA732 magnetic encoder and designed a dedicated PCB around it in Altium. The device&rsquo;s specified 0&ndash;60,000 RPM measurement range provided the speed baseline and headroom I wanted for a UAV motor, while its programmable SPI interface and hardware ABZ output fit the bring-up and real-time control workflow.</p>
+      <p>The board geometry was driven by the motor. I shaped the PCB around the stator&rsquo;s available mounting points and placed the sensor directly over a diametrically magnetized rotor magnet. I designed for approximately 60 mT at the sensor, inside the MA732 datasheet&rsquo;s 45&ndash;100 mT operating characterization range, then routed the configuration and incremental-output signals to a compact connector.</p>
+    </div>
+    <div class="image-pair image-pair--balanced">
+      <figure class="story-photo">
+        <a href="src/img/3d render of encoder board.png" target="_blank" rel="noopener" aria-label="Open the encoder PCB render at full size (new tab)">
+          <img src="src/img/3d render of encoder board.png" width="790" height="490" loading="lazy" alt="Three-dimensional render of the custom magnetic encoder PCB">
+        </a>
+        <figcaption>PCB layout and mechanical outline for the custom MA732 encoder board.</figcaption>
+      </figure>
+      <figure class="story-photo">
+        <a href="src/img/picture of where encoder board is mounted on stator and rotor magnet.png" target="_blank" rel="noopener" aria-label="Open the encoder mounting-location photo at full size (new tab)">
+          <img src="src/img/picture of where encoder board is mounted on stator and rotor magnet.png" width="447" height="456" loading="lazy" alt="Motor interior marked to show the central rotor magnet and encoder PCB mounting area">
+        </a>
+        <figcaption>The rotor magnet and constrained mounting area that set the sensor location and board shape.</figcaption>
+      </figure>
+    </div>
+    <figure class="story-photo wide-photo">
+      <a href="src/img/encoder board mounted on motor.png" target="_blank" rel="noopener" aria-label="Open the installed encoder board photo at full size (new tab)">
+        <img src="src/img/encoder board mounted on motor.png" width="657" height="615" loading="lazy" alt="Custom purple encoder PCB installed across the center of the motor stator">
+      </a>
+      <figcaption>The assembled encoder PCB mounted over the rotor magnet on the modified motor. I added and crossed out the UIUC logo to prevent confusions given the PCB's board shape :).</figcaption>
+    </figure>
+
+    <div class="encoder-details">
+      <h3>Turning the motor geometry into encoder settings</h3>
+      <p>The MA732 is magnetic, so it does not have physical optical slits. I programmed the equivalent incremental resolution: 1,024 pulses per mechanical revolution on each AB channel. Counting all four quadrature edges produces 4,096 position counts per revolution.</p>
+      <div class="metric-grid" aria-label="Encoder design values">
+        <div class="metric"><strong>60,000</strong><span>RPM specified measurement ceiling</span></div>
+        <div class="metric"><strong>60 mT</strong><span>nominal magnetic-field design target</span></div>
+        <div class="metric"><strong>1,024</strong><span>AB pulses per mechanical revolution</span></div>
+        <div class="metric"><strong>21</strong><span>motor pole pairs</span></div>
+      </div>
+      <div class="calculation">
+        <p>With 21 pole pairs, one mechanical turn contains 21 electrical revolutions. Dividing 4,096 quadrature counts by 21 gives about 195 counts per electrical revolution. That is approximately 1.85 electrical degrees per count, fine enough to give the FOC loop a useful rotor-angle update throughout each electrical cycle.</p>
+        <code>4,096 counts &divide; 21 pole pairs = 195.05 counts / electrical revolution<br>360&deg; &divide; 195.05 = 1.85&deg; electrical / count</code>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-section research-stage" id="bringup">
+    <div class="section-heading">
+      <p class="eyebrow">04 / PCB bring-up</p>
+      <h2>Programming the encoder over SPI</h2>
+    </div>
+    <div class="story-split">
+      <div>
+        <p>I wrote a C++ utility to configure and verify the MA732 over SPI. It first checked communication by reading the absolute angle, then programmed rotation direction, mechanical zero, the 1,024-pulse ABZ output, the fastest 64 &micro;s filter window, and ABZ hysteresis. Every register write was read back so I could verify the configuration before connecting the encoder output to the motor controller.</p>
+        <p>SPI was used for setup and diagnostics; the encoder&rsquo;s A, B, and index signals became the real-time interface to the dual three-phase control prototype. This separated one-time sensor configuration from the deterministic position edges used during closed-loop operation.</p>
+        <div class="bringup-note"><strong>A practical lab detail:</strong> I repurposed a Raspberry Pi from an earlier drone project to flash and configure the board. I did not have a monitor available, so I connected the Pi to my TV. The board communicated, accepted its settings, and returned the expected readback on the first try.</div>
+      </div>
+      <figure class="story-photo">
+        <a href="src/img/encoder program success cmd output.png" target="_blank" rel="noopener" aria-label="Open the successful encoder configuration output at full size (new tab)">
+          <img src="src/img/encoder program success cmd output.png" width="601" height="727" loading="lazy" alt="Terminal output showing successful MA732 SPI configuration and register readback on a Raspberry Pi">
+        </a>
+        <figcaption>First bring-up: communication, register writes, readback, and final angle measurement all succeeded.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="story-section research-stage" id="testing">
+    <div class="section-heading">
+      <p class="eyebrow">05 / Integration &amp; results</p>
+      <h2>Closing the loop on the propulsion stand</h2>
+    </div>
+    <div class="story-prose">
+      <p>With the stator, dual inverter, and encoder assembled, the rotor-position path was complete: the magnet produced the field, the MA732 measured angle, the programmed ABZ interface delivered incremental position, and the control firmware used that feedback for sensored operation.</p>
+      <p>The completed prototype progressed from bench-level signal checks to closed-loop testing with a propeller. That result validated the full development chain, including the control concept, six-phase hardware, custom sensing, configuration software, and physical integration, as one working electromechanical system.</p>
+    </div>
+    <figure class="story-photo wide-photo">
+      <a href="src/img/motor with propeller test setup.png" target="_blank" rel="noopener" aria-label="Open the motor and propeller test setup at full size (new tab)">
+        <img src="src/img/motor with propeller test setup.png" width="522" height="702" loading="lazy" alt="Six-phase motor with a propeller, measurement probes, and instrumentation on the test bench">
+      </a>
+      <figcaption>The integrated motor, encoder, and propeller setup used for sensored closed-loop testing. In this test, we're also monitoring phase voltages and currents (differential probes, hall effect probe).</figcaption>
+    </figure>
+  </section>
+
+  <nav class="next-project" aria-label="More projects"><a href="vfs-purdue.html">&larr; VFS Purdue</a><a href="modular-control-esc.html">Next: Modular Control ESC &rarr;</a></nav>
+</main>
+<footer class="portfolio-footer"><div><p>&copy; 2026 Valentino Cattaneo</p><a href="contact.html">Get in touch</a><a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" rel="noopener">LinkedIn &nearr;</a></div></footer>
+</body>
+</html>

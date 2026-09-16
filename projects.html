@@ -1,109 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="navigation.js" defer></script>
-    <title>Projects | Valentino Cattaneo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Valentino Cattaneo’s aircraft, embedded systems, and electric propulsion projects.">
+  <title>Projects | Valentino Cattaneo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+  <script src="navigation.js" defer></script>
 </head>
-<body>
-
-    <header class="site-header">
-        <div class="header-inner">
-            <h1><a href="index.html">Valentino Cattaneo</a></h1>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu">
-                <span></span><span></span><span></span>
-            </button>
-            <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
-                <a href="index.html">Home</a>
-                <a target="_blank" href="most updated resume.pdf">Resume</a>
-                <div class="nav-dropdown">
-                    <a class="nav-dropdown-toggle" href="projects.html" aria-current="page" aria-haspopup="true">Projects <span aria-hidden="true">▾</span></a>
-                    <div class="nav-dropdown-menu">
-                        <a href="#vfs-purdue">VFS Purdue</a>
-                        <a class="nav-subitem" href="#vfs-250kg-vehicle">250kg Vehicle</a>
-                        <a class="nav-subitem" href="#vfs-scale-prototype">40% Scale Prototype</a>
-                        <a href="#lidar-drone">L.I.D.A.R. Drone</a>
-                        <a href="#modular-control-esc">Modular Control ESC</a>
-                    </div>
-                </div>
-                <a href="contact.html">Contact</a>
-                <a href="links.html">Links</a>
-            </nav>
+<body class="portfolio-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-brand" href="index.html">Valentino Cattaneo</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation-menu" aria-label="Toggle navigation menu"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="navigation-menu" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="Valentino_Cattaneo_resume.pdf" target="_blank" rel="noopener">Resume</a>
+      <div class="nav-dropdown">
+        <a class="nav-dropdown-toggle" href="projects.html" aria-current="page">Projects <span aria-hidden="true">▾</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="vfs-purdue.html" >VFS Purdue</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage1">Stage 1 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-prototype">Prototype integration</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-fullscale">Stage 2 architecture</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-stage3">Stage 3 final design</a>
+          <a class="nav-subitem" href="vfs-purdue.html#vfs-bms">Battery management</a>
+          <a href="six-phase-drive.html" >Six-Phase Motor Drive</a>
+          <a href="modular-control-esc.html" >Modular Control ESC</a>
         </div>
-    </header>
-
-    <section>
-        <h2>Projects</h2>
-        <p class="projects-intro">A selection of aircraft, autonomy, and motor-control projects I have led or built.</p>
-
-        <article class="project-card project-card--featured" id="vfs-purdue">
-            <p class="section-status">Section in progress</p>
-            <h3>VFS Purdue</h3>
-            <p>
-                As President of <a href="https://vfs-go-aero.github.io/" target="_blank">Vertical Flight Systems Purdue</a>,
-                I lead a 30-member interdisciplinary team developing an autonomy-enabled, human-carrying eVTOL for the
-                GoAERO Competition. Our team earned the U.S. University Innovation Award and raised more than $74,000
-                toward the aircraft's development.
-            </p>
-
-            <div class="project-subprojects">
-                <section class="project-subcard" id="vfs-250kg-vehicle">
-                    <p class="section-status">Section in progress</p>
-                    <h4>250kg Vehicle</h4>
-                    <p>
-                        Our full-scale aircraft is a human-carrying emergency-response eVTOL designed for the final stage of
-                        the GoAERO Competition. I coordinate aircraft-level technical and logistical decisions while focusing
-                        on the 100 V monitoring and balancing BMS for its 14.4 kWh battery pack.
-                    </p>
-                </section>
-
-                <section class="project-subcard" id="vfs-scale-prototype">
-                    <p class="section-status">Section in progress</p>
-                    <h4>40% Scale Prototype</h4>
-                    <p>
-                        This 32 kg demonstrator validated the team's propulsion, avionics, and autonomy architecture before
-                        committing to the full-scale aircraft. I led avionics and propulsion integration and helped direct the
-                        flight-test campaign from initial takeoff through fully autonomous missions.
-                    </p>
-                </section>
-            </div>
-        </article>
-
-        <article class="project-card" id="lidar-drone">
-            <p class="section-status">Section in progress</p>
-            <h3>L.I.D.A.R. Drone</h3>
-            <p>
-                L.I.D.A.R. (Light-based Indoor Drone for Autonomous Recognition) is a custom 3D-printed, five-inch
-                multirotor I designed and manufactured for autonomous indoor flight. It uses a Raspberry Pi and a custom
-                LiDAR-based SLAM algorithm written in C++ to map its surroundings, estimate its position, and navigate
-                indoors without collisions.
-            </p>
-        </article>
-
-        <article class="project-card" id="modular-control-esc">
-            <p class="section-status">Project in progress</p>
-            <h3>Modular Control ESC</h3>
-            <p>
-                This project is a modular motor-driver platform for deploying and comparing motor-control algorithms and
-                rotor-position estimators on the same hardware. The planned design uses an STM32H743, a three-phase inverter,
-                gate drivers, current sensing, and DC-link measurement so algorithms such as FOC, deadbeat control, MPC, and
-                DTC can be evaluated under comparable conditions. I'm currently designing the hardware to enable multiple 
-                control algorithms to be tested on the same inverter and motor, with the goal of providing a flexible platform for research and development in motor control.
-            </p>
-            <ul>
-                <li><b>Position feedback:</b> support for encoders, Hall sensors, and sensorless observers.</li>
-                <li><b>Power target:</b> 1 kW</li>
-            </ul>
-        </article>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Valentino Cattaneo. All rights reserved.</p>
-        <a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" id="linkedin-link">
-            <img src="src/img/vecteezy_linkedin-logo-png-linkedin-icon-transparent-png_18930480.png" alt="LinkedIn Profile" id="linkedin-logo">
-        </a>
-    </footer>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="links.html">Links</a>
+    </nav>
+  </div>
+</header>
+<main class="portfolio-main" id="main-content">
+<header class="page-intro">
+  <p class="eyebrow">Engineering portfolio</p>
+  <h1>My projects<span class="gold-dot">.</span></h1>
+  <p class="intro-copy">Aircraft, embedded systems, and electric propulsion. A closer look at the problems I have worked on, the decisions behind my designs, and what it took to bring them together.</p>
+</header>
+<div class="project-index">
+  <article class="index-project index-project--featured" id="vfs-purdue">
+    <a class="project-cover" href="vfs-purdue.html" aria-label="Explore VFS Purdue"><img src="src/img/vfs-prototype-hangar.webp" width="1375" height="960" fetchpriority="high" alt="The VFS prototype aircraft inside a hangar"><span class="cover-link" aria-hidden="true">Explore project ↗</span></a>
+    <div class="index-project-copy"><p class="eyebrow">Purdue · Aircraft development</p><h2><a href="vfs-purdue.html">Vertical Flight Systems</a></h2><p>From a mission-driven sizing algorithm to prototype integration: developing an autonomous eVTOL for emergency response.</p><p class="project-topics">Powertrain optimization / Avionics / Battery systems</p></div>
+  </article>
+  <article class="index-project" id="six-phase-drive">
+    <a class="project-cover diagram-cover" href="six-phase-drive.html" aria-label="Explore the six-phase motor-drive research project"><img src="src/img/proposed dual 3 phase foc block diagram.png" width="1297" height="777" alt="Block diagram of the proposed dual three-phase field-oriented control architecture"><span class="cover-link" aria-hidden="true">Explore project ↗</span></a>
+    <div class="index-project-copy"><p class="eyebrow">Purdue POWER Lab · Motor control research</p><h2><a href="six-phase-drive.html">Six-Phase Motor Drive</a></h2><p>From a dual three-phase control architecture and first stator prototype to a custom MA732 encoder board and sensored closed-loop testing.</p><p class="project-topics">Six-phase FOC / PCB design / SPI &amp; ABZ / Hardware bring-up</p></div>
+  </article>
+  <article class="index-project" id="modular-control-esc">
+    <a class="project-cover diagram-cover" href="modular-control-esc.html" aria-label="Explore the Modular Control ESC"><img src="src/img/esc-architecture.svg" width="800" height="500" alt="Conceptual three-phase motor-drive architecture linking a controller, inverter, and motor"><span class="cover-link" aria-hidden="true">Explore project ↗</span></a>
+    <div class="index-project-copy"><p class="eyebrow">In development · Motor control</p><h2><a href="modular-control-esc.html">Modular Control ESC</a></h2><p>A shared hardware platform for implementing and comparing motor-control algorithms and rotor-position estimators.</p><p class="project-topics">Power electronics / STM32 / Feedback control</p></div>
+  </article>
+</div>
+</main>
+<footer class="portfolio-footer"><div><p>&copy; 2026 Valentino Cattaneo</p><a href="contact.html">Get in touch</a><a href="https://www.linkedin.com/in/valentino-cattaneo/" target="_blank" rel="noopener">LinkedIn ↗</a></div></footer>
 </body>
 </html>

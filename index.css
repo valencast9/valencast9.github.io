@@ -63,6 +63,8 @@
 .intro-band .eyebrow,
 .section-heading .eyebrow { margin-bottom: 15px; color: #80673f; }
 .intro-band h2 { max-width: 460px; font-size: clamp(34px, 3.9vw, 48px); }
+.intro-profile-photo { margin: 28px 0 0; overflow: hidden; background: #d9d5ca; }
+.intro-profile-photo img { display: block; width: 100%; height: auto; }
 .intro-text { max-width: 620px; color: #4b514d; font-size: 18px; line-height: 1.75; }
 .intro-text p + p { margin-top: 18px; }
 

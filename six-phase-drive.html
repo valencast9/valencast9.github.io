@@ -40,14 +40,14 @@
 <main class="portfolio-main" id="main-content">
   <header class="page-intro project-intro">
     <a class="back-link" href="projects.html">&larr; All projects</a>
-    <p class="eyebrow">Purdue POWER Lab &middot; Undergraduate research</p>
+    <p class="eyebrow">Purdue POWER Lab - Undergraduate research</p>
     <h1>Six-Phase Motor<br>Drive Research<span class="gold-dot">.</span></h1>
-    <p class="intro-copy">Developing a dual three-phase drive for UAV propulsion, from control architecture and the first modified stator to custom rotor-position hardware and sensored closed-loop operation.</p>
+    <p class="intro-copy">Developing a dual three-phase drive for UAV propulsion, from proposed motor control architecture and the first modified stator to a first working prototype with sensored closed-loop operation.</p>
   </header>
 
   <section class="research-hero" aria-label="Project overview">
     <div>
-      <p class="research-lead">I worked across the complete research cycle: defining the control approach, building the first motor and inverter prototypes, designing an encoder PCB, writing the software needed to configure it, and integrating position feedback into the physical drive.</p>
+      <p class="research-lead">I worked across the complete research cycle: defining the control approach, designing custom hardware to enable demonstration, and building the first motor and inverter prototypes.</p>
       <p>The central challenge was to make two three-phase electrical systems behave as one six-phase machine. That meant the controller, power stage, modified stator, position sensor, and mechanical package all had to agree on the same rotor angle and timing.</p>
       <div class="project-facts">
         <p><span>Role</span>Undergraduate Researcher</p>
@@ -149,7 +149,7 @@
       <a href="src/img/encoder board mounted on motor.png" target="_blank" rel="noopener" aria-label="Open the installed encoder board photo at full size (new tab)">
         <img src="src/img/encoder board mounted on motor.png" width="657" height="615" loading="lazy" alt="Custom purple encoder PCB installed across the center of the motor stator">
       </a>
-      <figcaption>The assembled encoder PCB mounted over the rotor magnet on the modified motor. I added and crossed out the UIUC logo to prevent confusions given the PCB's board shape :).</figcaption>
+      <figcaption>The assembled encoder PCB mounted over the rotor magnet on the modified motor. I added and crossed out the UIUC logo to prevent confusions given the PCB's shape :).</figcaption>
     </figure>
 
     <div class="encoder-details">
@@ -177,7 +177,7 @@
       <div>
         <p>I wrote a C++ utility to configure and verify the MA732 over SPI. It first checked communication by reading the absolute angle, then programmed rotation direction, mechanical zero, the 1,024-pulse ABZ output, the fastest 64 &micro;s filter window, and ABZ hysteresis. Every register write was read back so I could verify the configuration before connecting the encoder output to the motor controller.</p>
         <p>SPI was used for setup and diagnostics; the encoder&rsquo;s A, B, and index signals became the real-time interface to the dual three-phase control prototype. This separated one-time sensor configuration from the deterministic position edges used during closed-loop operation.</p>
-        <div class="bringup-note"><strong>A practical lab detail:</strong> I repurposed a Raspberry Pi from an earlier drone project to flash and configure the board. I did not have a monitor available, so I connected the Pi to my TV. The board communicated, accepted its settings, and returned the expected readback on the first try.</div>
+        <div class="bringup-note"><strong>How I actually flashed it:</strong> As I couldn't use USB or UART and connect the board to my computer as it required specific read-write sequences to program, I repurposed a Raspberry Pi from an earlier drone project to program the encoder's settings registers. I did not have a monitor available, so I connected the Pi to my TV. The board communicated, accepted its settings, and returned the expected readback on (only) the third try!! Initially, there were some issues with how I implemented the SPI driver with the requirements of the MA732: I eventually figured this out after digging and comparing the requested message packets in the datasheet and iterating on the code.</div>
       </div>
       <figure class="story-photo">
         <a href="src/img/encoder program success cmd output.png" target="_blank" rel="noopener" aria-label="Open the successful encoder configuration output at full size (new tab)">
@@ -197,22 +197,23 @@
       <p>With the stator, dual inverter, and encoder assembled, the rotor-position path was complete: the magnet produced the field, the MA732 measured angle, the programmed ABZ interface delivered incremental position, and the control firmware used that feedback for sensored operation.</p>
       <p>The completed prototype progressed from bench-level signal checks to closed-loop testing with a propeller. That result validated the full development chain, including the control concept, six-phase hardware, custom sensing, configuration software, and physical integration, as one working electromechanical system.</p>
     </div>
-    <figure class="story-photo wide-photo">
+    <figure class="story-photo wide-photo propeller-test-photo">
       <a href="src/img/motor with propeller test setup.png" target="_blank" rel="noopener" aria-label="Open the motor and propeller test setup at full size (new tab)">
         <img src="src/img/motor with propeller test setup.png" width="522" height="702" loading="lazy" alt="Six-phase motor with a propeller, measurement probes, and instrumentation on the test bench">
       </a>
       <figcaption>The integrated motor, encoder, and propeller setup used for sensored closed-loop testing. In this test, we're also monitoring phase voltages and currents (differential probes, hall effect probe).</figcaption>
     </figure>
+    <p class="waveform-intro">The capture below shows the waveforms from the A and A&prime; winding groups in a loaded (with propeller) motor test. Yellow and pink show the instantaneous phase voltages and their moving averages, while white and blue show the corresponding mirrored phase currents.</p>
     <figure class="story-photo wide-photo">
       <a href="src/img/6 phase A and A' waveforms first prototype.jpg" target="_blank" rel="noopener" aria-label="Open the six-phase voltage and current waveform capture at full size (new tab)">
         <img src="src/img/6 phase A and A' waveforms first prototype.jpg" width="5712" height="4284" loading="lazy" decoding="async" alt="Motor-drive analyzer showing phase A and A-prime switching waveforms with low-pass-filtered average voltage and current traces">
       </a>
-      <figcaption>Measured phase A and A&prime; voltage and current waveforms from the first dual-inverter prototype, including their low-pass-filtered average behavior.</figcaption>
+      <figcaption>Measured phase A and A&prime; voltage and current waveforms from the first dual-inverter prototype.</figcaption>
     </figure>
     <div class="waveform-analysis">
       <h3>Why the waveforms are not clean</h3>
       <p>This capture documents an early proof of concept, not the final waveform quality of a fully regulated six-phase drive. The original three-phase drive was the only actively controlled power stage. Its gate-drive pattern was mirrored into the second inverter to energize the added three-phase winding group, but that second bridge had no independent current feedback or corrective control loop.</p>
-      <p>Mirroring assumes that both inverters and both winding groups behave identically. In practice, differences in gate-driver propagation delay, dead time, device voltage drop, DC-link and wiring inductance, and winding resistance and inductance change the voltage actually applied to each phase. The motor&rsquo;s back-EMF and the propeller&rsquo;s changing load add further current variation. Because the added inverter was not measuring and regulating its own phase currents, those mismatches appeared as ripple and distortion instead of being corrected by the controller. PWM switching edges, probe placement, sensor bandwidth, and the oscilloscope&rsquo;s low-pass processing also contribute to the visible high-frequency texture. A purpose-built dual three-phase controller would synchronize both modulators to rotor position, measure both winding groups, and close a current loop around each group so it could actively correct these errors.</p>
+      <p>Mirroring assumes that both inverters and both winding groups behave identically. In practice, differences in gate-driver propagation delay, dead time, device voltage drop, DC-link and wiring inductance, and winding resistance and inductance change the voltage actually applied to each phase. The motor&rsquo;s back-EMF and the propeller&rsquo;s imperfect load add further current variation. Because the added inverter was not measuring and regulating its own phase currents, those mismatches appeared as ripple and distortion instead of being corrected by the controller. A purpose-built dual three-phase controller would synchronize both modulators to rotor position, measure both winding groups, and close a current loop around each group so it could actively correct these errors. Yet, this still served as a first working prototype to demonstrate that our research idea could be taken into practice.</p>
     </div>
   </section>
 

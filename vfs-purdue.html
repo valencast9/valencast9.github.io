@@ -47,7 +47,7 @@
 
   <div class="story-opening">
     <div>
-      <p>I serve as President of <a href="https://vfs-go-aero.github.io/" target="_blank" rel="noopener">Vertical Flight Systems Purdue</a>, leading an interdisciplinary team of approximately 30 students developing a human-carrying aircraft for the <b>GoAERO Competition</b>. The program progressed from a Stage 1 concept, through a 32 kg flight-test demonstrator and an intermediate Stage 2 full-scale architecture, to the 248 kg Stage 3 aircraft that we are now manufacturing.</p>
+      <p>I serve as President of <a href="https://vfs-go-aero.github.io/" target="_blank" rel="noopener">Vertical Flight Systems Purdue</a>, leading an interdisciplinary team of approximately 30 students developing a human-carrying aircraft for the <a href="https://www.goaeroprize.com/", target="_blank">GoAERO Competition</a>. The program progressed from a Stage 1 concept (where we <a href="https://www.goaeroprize.com/stage-1-winning-teams/go-aero-purdue", target="_blank">won a NASA award!</a>), through a 32 kg flight-test demonstrator and an intermediate Stage 2 full-scale architecture, to the 248 kg Stage 3 aircraft that we are now manufacturing.</p>
       <p>I led the Powertrain and Avionics sections of the Stage 1 and Stage 2 reports and contributed that work to our published <a href="https://arc.aiaa.org/doi/10.2514/6.2026-4585" target="_blank" rel="noopener">AIAA AVIATION 2026 paper</a>. My role has spanned mission-driven sizing, motor and battery selection, electrical architecture, wiring design, prototype integration, flight preparation, and the battery-management electronics for the final aircraft.</p>
     </div>
     <aside class="project-facts" aria-label="Project overview">
@@ -102,8 +102,8 @@
 
     <div class="story-split">
       <div>
-        <h3>Powertrain and avionics were designed together</h3>
-        <p>The Stage 1 power system separated the upper and lower motor groups into two independent circuits and kept avionics on its own battery so a propulsion-pack swap would not reboot the flight systems. The avionics concept prioritized video, position and pose, state of charge, time of flight, mission phase, and detected obstacles for the operator.</p>
+        <h3>Powertrain and avionics: designed together, kept separate</h3>
+        <p>The Stage 1 power system I proposed separated the upper and lower motor groups into two independent circuits and kept avionics on its own battery so a propulsion-pack swap would not reboot the flight systems. The avionics concept prioritized video, position and pose, state of charge, time of flight, mission phase, and detected obstacles for the operator.</p>
         <p>The first architecture also established an important safety boundary: ground computation could handle route planning and reconnaissance processing, but the onboard computer still had to keep the aircraft safe if the ground link disappeared.</p>
       </div>
       <figure class="story-photo">
@@ -119,7 +119,7 @@
       <h2>Closing the loop between<br>mass, power, and payload</h2>
     </div>
     <div class="story-prose">
-      <p>I developed a MATLAB sizing and powertrain optimization tool because battery capacity, propulsion performance, and aircraft mass could not be selected independently. A larger battery adds energy, but also increases weight and the power required to fly. The program resolves that coupling and turns the mission profile into a self-consistent set of mass, power, energy, and component estimates.</p>
+      <p>I developed a MATLAB sizing and powertrain configuration optimizer algorithm because battery capacity, propulsion performance, and aircraft mass could not be selected independently. A larger battery adds energy, but also increases weight and the power required to fly. The program resolves that coupling and turns the mission profile into a self-consistent set of mass, power, energy, and component estimates.</p>
       <p>For each candidate configuration and payload, the inner loop estimates maximum takeoff mass and disk loading, calculates hover and cruise power, integrates the mission energy, converts that energy into battery mass, and feeds the result back into the aircraft mass. It repeats until the mass and power estimates converge. An outer loop then sweeps motors, propellers, battery assumptions, and multirotor layouts before rejecting solutions that violate torque, current, thrust, or propeller tip-speed limits.</p>
     </div>
 
@@ -168,7 +168,7 @@
 
     <div class="story-prose">
       <p>The Stage 2 architecture traded the coaxial layout's redundancy for lower takeoff mass, lower structural mass, reduced parasitic drag, and fewer propulsion components. Its four independent 400 V branches isolated switching noise and limited cross-coupling. Stage 3 retained the independent-branch philosophy but returned to eight rotors and a voltage that the team could build, service, and test more safely.</p>
-      <p>Surprisingly, Stage 3 went back to a very similar configuration as our proposal design, as concerns regarding High-Voltage safety, current management and motor/ESC/battery redundancy benefits of isolated X8 powertrains pushed us to a "less efficient" but much more feasible and safe-to-operate design.</p>
+      <p>Surprisingly, Stage 3 went back to a very similar configuration as our proposal design <a href="src/img/vfs-sizing-flowchart.png" target="_blank" rel="noopener">(which was optimized by my configurator optimizer code :) )</a>, as concerns regarding High-Voltage safety, current management and motor/ESC/battery redundancy benefits of isolated X8 powertrains pushed us to a "less efficient" but much more feasible and safe-to-operate design.</p>
       <a class="paper-link" href="https://arc.aiaa.org/doi/10.2514/6.2026-4585" target="_blank" rel="noopener"><span><strong>Read the AIAA paper</strong><small>Full sizing methodology, assumptions, and analysis</small></span><span aria-hidden="true">&#8599;</span></a>
     </div>
   </section>
@@ -180,8 +180,13 @@
     </div>
     <div class="story-prose">
       <p>The 32 kg demonstrator was the bridge between report-level architecture and a flyable system. I led propulsion and avionics integration, including component placement, power distribution, signal routing, wiring, and bringup. The detailed wiring diagram became the shared reference for assembling the aircraft and tracing faults during ground testing.</p>
-      <p>The prototype used a Cube Red flight controller, Jetson Orin companion computer, ZED X stereo camera, time-of-flight altitude LiDAR, Here RTK navigation, FPV video, telemetry and RC links, a SmartAP power-distribution board, and four motor controllers. The diagram also separated placement by aircraft region so cable length, service access, and high-current routing were considered before installation.</p>
+      <p>The prototype used a Cube Orange+ flight controller, ZED Box Mini companion computer, ZED X stereo camera, time-of-flight altitude LiDAR, Here RTK navigation, optical flow, telemetry, video and RC links, and four motor controllers. The architecture separated flight-critical control from perception and kept navigation, communications, power, and propulsion interfaces explicit before installation.</p>
     </div>
+
+    <figure class="technical-figure technical-figure--wide">
+      <a href="src/img/prototype picture with labeled parts.png" target="_blank" rel="noopener" aria-label="Open the labeled Stage 2 prototype photograph at full size in a new tab"><img src="src/img/prototype picture with labeled parts.png" width="1467" height="896" loading="lazy" alt="Labeled Stage 2 prototype showing the Cube Orange+ flight controller, ZED Box Mini, RTK GNSS, radio telemetry, ZED X camera, battery, payload frame, propellers, motors, and speed controllers"></a>
+      <figcaption><strong>Stage 2 prototype hardware.</strong> The labeled aircraft shows how the flight controller, companion computer, sensing, communications, propulsion, and payload hardware were physically integrated. <a href="src/img/prototype picture with labeled parts.png" target="_blank" rel="noopener">Open full-size photograph &#8599;</a></figcaption>
+    </figure>
 
     <figure class="technical-figure technical-figure--wide">
       <a href="src/img/detailed wiring diagram, vfs stage 2 (prototype drone).png" target="_blank" rel="noopener" aria-label="Open the Stage 2 prototype wiring diagram at full size in a new tab"><img src="src/img/detailed wiring diagram, vfs stage 2 (prototype drone).png" width="2317" height="1096" loading="lazy" alt="Detailed Stage 2 prototype wiring diagram showing batteries, power distribution, flight controller, companion computer, sensors, communications, and four motor controllers"></a>
@@ -260,17 +265,17 @@
 
   <section class="story-section" id="vfs-fullscale">
     <div class="section-heading">
-      <p class="eyebrow">05 / Competition Stage 2 &middot; Intermediate architecture</p>
-      <h2>Exploring the first<br>full-scale system</h2>
+      <p class="eyebrow">05 / Competition Stage 2 &middot; Actual avionics</p>
+      <h2>The architecture<br>we actually flew</h2>
     </div>
     <div class="story-prose">
-      <p>The Stage 2 report carried the prototype lessons into a more detailed full-scale architecture. This intermediate design used a Pixhawk 6X for the safety-critical flight-control loop and a ZED Box Mini for higher-level perception and autonomy. Navigation combined RTK GNSS, downward LiDAR, and optical flow. Telemetry, manual control, and pilot video remained separate links so one radio function did not have to carry every operational responsibility.</p>
-      <p>An isolated avionics battery feeds 5 V and 12 V buses and remains connected during propulsion-pack swaps. The four powertrain branches each connect a battery source, BMS, 80 A controller, and MAD AM60 motor, while CAN ties the propulsion health data back to the flight controller.</p>
+      <p>The hardware used for Stage 2 testing was built around a Cube Orange+ for the safety-critical flight-control loop and a ZED Box Mini for higher-level perception and autonomy. Navigation combined Here 4 RTK GNSS, an LW20/C time-of-flight rangefinder, and HereFlow optical flow. ZED X stereo cameras and the SF40/C LiDAR supplied perception data to the companion computer.</p>
+      <p>An independent avionics battery supplied 5 V and 12 V conversion. RFD900X-US telemetry, 2.4 GHz ELRS control, and DJI O4 video kept ground-station data, manual control, and camera links separate. This as-built architecture is the system that informed the Stage 2 flight results and the final Stage 3 sensor and communications selections.</p>
     </div>
 
     <figure class="technical-figure technical-figure--wide">
-      <a href="src/img/vfs stage 3 avionics wiring diagram high level design.png" target="_blank" rel="noopener" aria-label="Open the full-scale VFS avionics wiring diagram at full size in a new tab"><img src="src/img/vfs stage 3 avionics wiring diagram high level design.png" width="1687" height="860" loading="lazy" alt="Full-scale VFS avionics architecture showing powertrain, flight controller, autonomy compute, navigation sensors, communications, and ground station"></a>
-      <figcaption><strong>Intermediate full-scale system architecture.</strong> This Stage 2 design defined many interfaces carried forward, although the 400 V four-motor powertrain and several avionics selections were later superseded. <a href="src/img/vfs stage 3 avionics wiring diagram high level design.png" target="_blank" rel="noopener">Open full-size diagram &#8599;</a></figcaption>
+      <a href="src/img/prototype actual avionics diagram.jpg" target="_blank" rel="noopener" aria-label="Open the actual Stage 2 prototype avionics diagram at full size in a new tab"><img src="src/img/prototype actual avionics diagram.jpg" width="935" height="504" loading="lazy" alt="Actual Stage 2 prototype avionics architecture showing the Cube Orange+, ZED Box Mini, navigation sensors, communications links, power conversion, propulsion interfaces, and ground station"></a>
+      <figcaption><strong>Actual Stage 2 avionics architecture.</strong> The diagram records the flight-control, autonomy, navigation, communications, power, and propulsion interfaces used to develop and test the prototype. <a href="src/img/prototype actual avionics diagram.jpg" target="_blank" rel="noopener">Open full-size diagram &#8599;</a></figcaption>
     </figure>
 
     <div class="story-prose">

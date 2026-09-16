@@ -144,6 +144,10 @@
 .calculation code { display: block; padding: 18px; overflow-wrap: anywhere; background: #121713; color: #f2e7cf; font: 600 16px/1.7 ui-monospace, SFMono-Regular, Consolas, monospace; }
 .bringup-note { margin: 34px 0 0; padding: 24px 28px; border-left: 4px solid #987541; background: #f1ede4; }
 .bringup-note strong { color: #2a302b; }
+.waveform-analysis { max-width: 900px; margin: 38px auto 0; padding: clamp(26px, 4vw, 40px); border-left: 4px solid #987541; background: #f1ede4; }
+.waveform-analysis h3 { margin-top: 0; color: #2a302b; }
+.waveform-analysis p { line-height: 1.8; }
+.waveform-analysis p:last-child { margin-bottom: 0; }
 .portfolio-footer { margin-top: 46px; padding: 30px 24px; }
 .portfolio-footer > div { max-width: 1052px; margin: 0 auto; display: flex; align-items: center; gap: 26px; }
 .portfolio-footer p { margin: 0 auto 0 0; }

@@ -203,6 +203,17 @@
       </a>
       <figcaption>The integrated motor, encoder, and propeller setup used for sensored closed-loop testing. In this test, we're also monitoring phase voltages and currents (differential probes, hall effect probe).</figcaption>
     </figure>
+    <figure class="story-photo wide-photo">
+      <a href="src/img/6 phase A and A' waveforms first prototype.jpg" target="_blank" rel="noopener" aria-label="Open the six-phase voltage and current waveform capture at full size (new tab)">
+        <img src="src/img/6 phase A and A' waveforms first prototype.jpg" width="5712" height="4284" loading="lazy" decoding="async" alt="Motor-drive analyzer showing phase A and A-prime switching waveforms with low-pass-filtered average voltage and current traces">
+      </a>
+      <figcaption>Measured phase A and A&prime; voltage and current waveforms from the first dual-inverter prototype, including their low-pass-filtered average behavior.</figcaption>
+    </figure>
+    <div class="waveform-analysis">
+      <h3>Why the waveforms are not clean</h3>
+      <p>This capture documents an early proof of concept, not the final waveform quality of a fully regulated six-phase drive. The original three-phase drive was the only actively controlled power stage. Its gate-drive pattern was mirrored into the second inverter to energize the added three-phase winding group, but that second bridge had no independent current feedback or corrective control loop.</p>
+      <p>Mirroring assumes that both inverters and both winding groups behave identically. In practice, differences in gate-driver propagation delay, dead time, device voltage drop, DC-link and wiring inductance, and winding resistance and inductance change the voltage actually applied to each phase. The motor&rsquo;s back-EMF and the propeller&rsquo;s changing load add further current variation. Because the added inverter was not measuring and regulating its own phase currents, those mismatches appeared as ripple and distortion instead of being corrected by the controller. PWM switching edges, probe placement, sensor bandwidth, and the oscilloscope&rsquo;s low-pass processing also contribute to the visible high-frequency texture. A purpose-built dual three-phase controller would synchronize both modulators to rotor position, measure both winding groups, and close a current loop around each group so it could actively correct these errors.</p>
+    </div>
   </section>
 
   <nav class="next-project" aria-label="More projects"><a href="vfs-purdue.html">&larr; VFS Purdue</a><a href="modular-control-esc.html">Next: Modular Control ESC &rarr;</a></nav>
